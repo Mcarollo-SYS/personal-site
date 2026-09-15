@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matteo Carollo — Systems & Software Portfolio</title>
+    
+    <!-- Tipografia Editoriale High-End -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Canvas di Sfondo Dinamico -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="brand">
+            <span class="brand-logo">MC</span>
+            <div class="brand-text">
+                <span class="name">MATTEO CAROLLO</span>
+                <span class="role">CS Student & Security Enthusiast</span>
+            </div>
+        </div>
+
+        <div class="status-badge">
+            <span class="status-dot"></span>
+            <span>UNIPD // Available for Projects</span>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-tag">01 // ARCHITECTURE & SYSTEMS</div>
+        <h1 class="hero-title">Crafting 3D Environments, Mobile Apps & Secure Systems.</h1>
+        <p class="hero-subtitle">
+            Specializzato nello sviluppo WebGL 3D (Three.js/Cannon.js), applicazioni mobile multipiattaforma (Flutter), analisi di sicurezza informatica e architetture a basso livello ARM.
+        </p>
+
+        <!-- Filtri Progetti Animati da Anime.js -->
+        <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">Tutti i Progetti</button>
+            <button class="filter-btn" data-filter="3d-systems">3D & Fisica</button>
+            <button class="filter-btn" data-filter="mobile">Mobile</button>
+            <button class="filter-btn" data-filter="cyber">Cybersecurity & ARM</button>
+        </div>
+    </section>
+
+    <!-- Griglia Progetti Interactive Cards -->
+    <main class="projects-container">
+        <div class="projects-grid" id="projects-grid">
+            <!-- Le card verranno generate dinamicamente da JS -->
+        </div>
+    </main>
+
+    <!-- Sezione Stack & Skills -->
+    <section class="skills-section">
+        <div class="section-label">02 // TECH STACK MATRIX</div>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <i class="fa-solid fa-cube skill-icon"></i>
+                <h3>3D & Game Engine</h3>
+                <p>Three.js, Cannon.js, WebGL, Canvas API, Java OOP Game Engines.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fa-solid fa-mobile-screen skill-icon"></i>
+                <h3>Mobile & Front-End</h3>
+                <p>Flutter, Dart, Modern ES6+ JavaScript, HTML5/CSS3 Glassmorphism.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fa-solid fa-shield-halved skill-icon"></i>
+                <h3>Cybersecurity & Low-Level</h3>
+                <p>ARM Assembly (LSL/LSR), C, Wireshark, Incident Triage, TryHackMe SAL1.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Finestra Modale Dettaglio Progetto -->
+    <div class="modal-backdrop" id="project-modal">
+        <div class="modal-card glass-card">
+            <button class="modal-close" id="modal-close"><i class="fa-solid fa-xmark"></i></button>
+            <span class="modal-category" id="modal-category">CATEGORY</span>
+            <h2 class="modal-title" id="modal-title">Project Title</h2>
+            
+            <div class="modal-body">
+                <div class="modal-block">
+                    <span class="block-label">PANORAMICA</span>
+                    <p id="modal-desc"></p>
+                </div>
+                
+                <div class="modal-block">
+                    <span class="block-label">ARCHITETTURA SOFTWARE</span>
+                    <p id="modal-arch"></p>
+                </div>
+
+                <div class="modal-block">
+                    <span class="block-label">TECHNOLOGIES & TOOLS</span>
+                    <div id="modal-tags" class="tag-row"></div>
+                </div>
+            </div>
+
+            <div class="modal-footer" id="modal-footer"></div>
+        </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>
