@@ -1,109 +1,163 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matteo Carollo — Systems & Software Portfolio</title>
-    
-    <!-- Tipografia Editoriale High-End -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MATTEO CAROLLO — Software Engineer</title>
+  
+  <!-- Font esterni -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- CSS personalizzato -->
+  <link rel="stylesheet" href="src/CSS/style.css">
 </head>
 <body>
 
-    <!-- Canvas di Sfondo Dinamico -->
-    <canvas id="bg-canvas"></canvas>
-
-    <!-- Header Navigation -->
-    <header class="navbar">
-        <div class="brand">
-            <span class="brand-logo">MC</span>
-            <div class="brand-text">
-                <span class="name">MATTEO CAROLLO</span>
-                <span class="role">CS Student & Security Enthusiast</span>
-            </div>
+    <!-- OVERLAY INTRO SCHERMO INTERO -->
+    <div id="intro-overlay" class="intro-overlay">
+        <div class="intro-content">
+          <h1 class="intro-name">MATTEO CAROLLO</h1>
+          <div class="intro-slider">
+            <span class="slide-text">Software Engineer</span>
+            <span class="slide-text">Backend Specialist</span>
+            <span class="slide-text">Distributed Systems</span>
+          </div>
         </div>
+        <div class="intro-scroll-hint">SCROLL PER ENTRARE ↓</div>
+      </div>
 
-        <div class="status-badge">
-            <span class="status-dot"></span>
-            <span>UNIPD // Available for Projects</span>
-        </div>
-    </header>
+  <div class="side-label" aria-hidden="true">PORTFOLIO</div>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="hero-tag">01 // ARCHITECTURE & SYSTEMS</div>
-        <h1 class="hero-title">Crafting 3D Environments, Mobile Apps & Secure Systems.</h1>
-        <p class="hero-subtitle">
-            Specializzato nello sviluppo WebGL 3D (Three.js/Cannon.js), applicazioni mobile multipiattaforma (Flutter), analisi di sicurezza informatica e architetture a basso livello ARM.
-        </p>
-
-        <!-- Filtri Progetti Animati da Anime.js -->
-        <div class="filter-bar">
-            <button class="filter-btn active" data-filter="all">Tutti i Progetti</button>
-            <button class="filter-btn" data-filter="3d-systems">3D & Fisica</button>
-            <button class="filter-btn" data-filter="mobile">Mobile</button>
-            <button class="filter-btn" data-filter="cyber">Cybersecurity & ARM</button>
-        </div>
-    </section>
-
-    <!-- Griglia Progetti Interactive Cards -->
-    <main class="projects-container">
-        <div class="projects-grid" id="projects-grid">
-            <!-- Le card verranno generate dinamicamente da JS -->
-        </div>
-    </main>
-
-    <!-- Sezione Stack & Skills -->
-    <section class="skills-section">
-        <div class="section-label">02 // TECH STACK MATRIX</div>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <i class="fa-solid fa-cube skill-icon"></i>
-                <h3>3D & Game Engine</h3>
-                <p>Three.js, Cannon.js, WebGL, Canvas API, Java OOP Game Engines.</p>
-            </div>
-            <div class="skill-card">
-                <i class="fa-solid fa-mobile-screen skill-icon"></i>
-                <h3>Mobile & Front-End</h3>
-                <p>Flutter, Dart, Modern ES6+ JavaScript, HTML5/CSS3 Glassmorphism.</p>
-            </div>
-            <div class="skill-card">
-                <i class="fa-solid fa-shield-halved skill-icon"></i>
-                <h3>Cybersecurity & Low-Level</h3>
-                <p>ARM Assembly (LSL/LSR), C, Wireshark, Incident Triage, TryHackMe SAL1.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Finestra Modale Dettaglio Progetto -->
-    <div class="modal-backdrop" id="project-modal">
-        <div class="modal-card glass-card">
-            <button class="modal-close" id="modal-close"><i class="fa-solid fa-xmark"></i></button>
-            <span class="modal-category" id="modal-category">CATEGORY</span>
-            <h2 class="modal-title" id="modal-title">Project Title</h2>
-            
-            <div class="modal-body">
-                <div class="modal-block">
-                    <span class="block-label">PANORAMICA</span>
-                    <p id="modal-desc"></p>
-                </div>
-                
-                <div class="modal-block">
-                    <span class="block-label">ARCHITETTURA SOFTWARE</span>
-                    <p id="modal-arch"></p>
-                </div>
-
-                <div class="modal-block">
-                    <span class="block-label">TECHNOLOGIES & TOOLS</span>
-                    <div id="modal-tags" class="tag-row"></div>
-                </div>
-            </div>
-
-            <div class="modal-footer" id="modal-footer"></div>
-        </div>
+  <!-- NAVIGATION -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="nav-mark"><span>DR</span>&nbsp;MATTEO CAROLLO</div>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">MENU</button>
+      <nav class="nav-links" id="navLinks">
+        <a href="#info" data-nav>Info</a>
+        <a href="#work" data-nav>Progetti</a>
+        <a href="#skills" data-nav>Competenze</a>
+        <a href="#experience" data-nav>Percorso</a>
+        <a href="#contact" data-nav>Contatti</a>
+      </nav>
     </div>
+  </header>
 
-    <script type="module" src="/src/main.js"></script>
+  <main>
+    <!-- HERO -->
+    <section class="hero container">
+      <div class="hero-eyebrow eyebrow">Software Engineer — Backend &amp; Sistemi Distribuiti</div>
+      <h1 class="hero-name">MATTEO<br><mark>CAROLLO</mark></h1>
+      <p class="hero-statement">
+        Progetto e costruisco sistemi backend affidabili. Mi interessa il punto
+        in cui l'architettura pulita incontra i vincoli reali di scala, costo e
+        manutenzione.
+      </p>
+
+      <div class="meta-row" id="metaRow"></div>
+    </section>
+
+    <!-- INFO -->
+    <section id="info" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title"><span class="n">01</span>Info</h2>
+        </div>
+        <div class="info-grid">
+          <div>
+            <div class="eyebrow">Chi sono</div>
+          </div>
+          <div class="info-lead">
+            <p>
+              Sono un ingegnere del software con base a Milano, laureato in
+              Informatica all'Università di Bologna. Lavoro principalmente su
+              backend distribuiti, pipeline dati e strumenti interni per team
+              di sviluppo.
+            </p>
+            <p>
+              Credo in un'ingegneria pragmatica: preferisco sistemi noiosi e
+              prevedibili a soluzioni brillanti ma fragili. La maggior parte
+              del mio lavoro migliore è invisibile — funziona, e basta.
+            </p>
+
+            <div class="fact-list">
+              <div class="fact">
+                <div class="fact-label">Formazione</div>
+                <div class="fact-value">Laurea in Informatica, Univ. di Bologna</div>
+              </div>
+              <div class="fact">
+                <div class="fact-label">Specializzazione</div>
+                <div class="fact-value">Sistemi backend &amp; distribuiti</div>
+              </div>
+              <div class="fact">
+                <div class="fact-label">Lingue</div>
+                <div class="fact-value">Italiano (madrelingua), Inglese (C1)</div>
+              </div>
+              <div class="fact">
+                <div class="fact-label">Attualmente</div>
+                <div class="fact-value">Disponibile per progetti freelance</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section id="work" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title"><span class="n">02</span>Progetti selezionati</h2>
+          <div class="filters" id="filters"></div>
+        </div>
+        <div class="project-list" id="projectList"></div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section section--invert">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title"><span class="n">03</span>Competenze</h2>
+        </div>
+        <div class="skills-grid" id="skillsGrid"></div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title"><span class="n">04</span>Percorso</h2>
+        </div>
+        <div class="timeline" id="timeline"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER / CONTACT -->
+  <footer id="contact" class="footer">
+    <div class="container">
+      <div class="footer-statement">Parliamo del <span class="accent">prossimo progetto.</span></div>
+      <div class="footer-row">
+        <div class="footer-links">
+          <a href="mailto:davide.rinaldi@example.com">davide.rinaldi@example.com</a>
+          <a href="#">github.com/davide-rinaldi</a>
+          <a href="#">linkedin.com/in/davide-rinaldi</a>
+        </div>
+        <a class="cv-button" href="#">Scarica CV — PDF</a>
+      </div>
+      <div class="footer-meta">
+        <span>© 2026 Davide Rinaldi</span>
+        <span>Milano, Italia</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script JavaScript -->
+  <script src="src/JS/data.js"></script>
+  <script src="src/JS/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 </body>
 </html>
