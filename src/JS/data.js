@@ -1,118 +1,194 @@
-/* ===================================================================
-   DATA — modifica qui contenuti e testi
-=================================================================== */
+/**
+ * ===================================================================
+ * DATA — modifica qui contenuti e testi
+ * ===================================================================
+ */
 
-const META = [
-    { label: "Basato a",       value: "Milano, IT" },
-    { label: "Disponibile da",  value: "Gennaio 2027" },
-    { label: "Focus",           value: "Backend & Sistemi" },
-    { label: "Esperienza",      value: "3+ anni" }
-  ];
-  
-  const PROJECTS = [
-    {
-      id: "nimbus",
-      title: "Nimbus API",
-      category: "Backend",
-      year: "2026",
-      description: "Sistema di code distribuito per l'elaborazione asincrona di migliaia di richieste al minuto, con retry automatici e tracciamento end-to-end.",
-      stack: ["Node.js", "PostgreSQL", "Redis", "Docker"]
-    },
-    {
-      id: "ledger",
-      title: "Ledger",
-      category: "Dati",
-      year: "2025",
-      description: "Pipeline ETL per la riconciliazione automatica di transazioni finanziarie tra sistemi eterogenei, con validazione e reportistica giornaliera.",
-      stack: ["Python", "Pandas", "Airflow", "PostgreSQL"]
-    },
-    {
-      id: "formwork",
-      title: "Formwork",
-      category: "Frontend",
-      year: "2025",
-      description: "Design system componibile adottato in tre prodotti interni, con documentazione viva e test visivi automatizzati.",
-      stack: ["React", "TypeScript", "Storybook"]
-    },
-    {
-      id: "watchtower",
-      title: "Watchtower",
-      category: "Sistemi",
-      year: "2024",
-      description: "Servizio di monitoraggio e alerting per infrastrutture containerizzate, con dashboard in tempo reale e soglie configurabili.",
-      stack: ["Go", "Docker", "Prometheus", "Grafana"]
-    },
-    {
-      id: "relay",
-      title: "Relay",
-      category: "Backend",
-      year: "2024",
-      description: "Gateway GraphQL che unifica sette microservizi legacy dietro un'unica interfaccia, riducendo il tempo di integrazione del team frontend.",
-      stack: ["Node.js", "GraphQL", "Kubernetes"]
-    },
-    {
-      id: "atlas-cli",
-      title: "Atlas CLI",
-      category: "Sistemi",
-      year: "2024",
-      description: "Strumento open source a riga di comando per la gestione di configurazioni multi-ambiente, con validazione dello schema integrata.",
-      stack: ["Rust", "Open Source"]
-    }
-  ];
-  
-  const SKILLS = [
-    {
-      group: "Linguaggi",
-      items: [
-        { name: "JavaScript / TypeScript", level: 90 },
-        { name: "Python", level: 85 },
-        { name: "Go", level: 65 },
-        { name: "SQL", level: 80 }
-      ]
-    },
-    {
-      group: "Framework",
-      items: [
-        { name: "Node.js / Express", level: 88 },
-        { name: "React", level: 75 },
-        { name: "GraphQL", level: 70 }
-      ]
-    },
-    {
-      group: "Infrastruttura",
-      items: [
-        { name: "Docker", level: 82 },
-        { name: "Kubernetes", level: 60 },
-        { name: "AWS", level: 68 }
-      ]
-    },
-    {
-      group: "Strumenti",
-      items: [
-        { name: "Git", level: 92 },
-        { name: "PostgreSQL / Redis", level: 78 },
-        { name: "Prometheus / Grafana", level: 62 }
-      ]
-    }
-  ];
-  
-  const EXPERIENCE = [
-    {
-      year: "2026 — oggi",
-      title: "Software Engineer Freelance",
-      org: "Progetti indipendenti",
-      desc: "Consulenza su architetture backend e sistemi di dati per piccoli team e startup."
-    },
-    {
-      year: "2023 — 2026",
-      title: "Backend Developer",
-      org: "Azienda tech, Milano",
-      desc: "Sviluppo e manutenzione di servizi backend in produzione, migrazione verso un'architettura a microservizi."
-    },
-    {
-      year: "2019 — 2023",
-      title: "Laurea in Informatica",
-      org: "Università di Bologna",
-      desc: "Tesi su algoritmi di scheduling per sistemi distribuiti."
-    }
-  ];
+export const META = [
+  { label: "Formazione", value: "Automazione & Sistemi" },
+  { label: "Background", value: "Informatica" },
+  { label: "Focus", value: "Software · Systems · Security" },
+  { label: "Università", value: "UniPD" }
+];
+
+export const PROJECTS = [
+  {
+    id: "3d-web-application",
+    title: "3D Web Application",
+    category: "Frontend / 3D",
+    year: "2025",
+    description:
+      "Applicazione web interattiva sviluppata in gruppo con un ambiente 3D esplorabile. Il progetto integra una scena WebGL, interazioni con l'ambiente e una componente di fisica. Ho partecipato anche al coordinamento del gruppo e alla gestione del lavoro tramite Git.",
+    stack: [
+      "JavaScript",
+      "Three.js",
+      "WebGL",
+      "Cannon.js",
+      "HTML",
+      "CSS",
+      "Git"
+    ],
+    motionPath: true
+  },
+
+  {
+    id: "progetto-flutter",
+    title: "Progetto Flutter",
+    category: "Mobile",
+    year: "2025",
+    description:
+      "Applicazione mobile sviluppata con Flutter e Dart durante il percorso di formazione informatica. Il progetto comprende la realizzazione dell'interfaccia, la logica applicativa e l'integrazione con servizi web.",
+    stack: [
+      "Flutter",
+      "Dart",
+      "XML",
+      "Web Services",
+      "Git"
+    ]
+  },
+
+  {
+    id: "tps-web-service",
+    title: "TPS Web Service",
+    category: "Web Service",
+    year: "2025",
+    description:
+      "Progetto dedicato alla realizzazione e all'utilizzo di servizi web, con particolare attenzione alla comunicazione tra applicazioni, alla gestione dei dati e all'integrazione tra componenti software.",
+    stack: [
+      "Java",
+      "Web Services",
+      "XML",
+      "HTTP",
+      "Git"
+    ]
+  },
+
+  {
+    id: "escape-room",
+    title: "Escape Room",
+    category: "Software",
+    year: "2025",
+    description:
+      "Progetto software sviluppato in gruppo per applicare programmazione, progettazione e organizzazione del lavoro. Ho partecipato allo sviluppo e al coordinamento delle attività del gruppo.",
+    stack: [
+      "Java",
+      "OOP",
+      "Git",
+      "Project Management"
+    ]
+  },
+
+  {
+    id: "progetto-gpo",
+    title: "Progetto GPO",
+    category: "Systems",
+    year: "2025",
+    description:
+      "Progetto orientato alla configurazione e alla gestione di sistemi Windows attraverso Group Policy, con approfondimento dei concetti di amministrazione dei sistemi e gestione degli ambienti di rete.",
+    stack: [
+      "Windows",
+      "Group Policy",
+      "Active Directory",
+      "Networking"
+    ]
+  }
+];
+
+/**
+ * Competenze principali
+ */
+export const SKILLS = {
+  software: {
+    number: "01 / 04",
+    title: "SOFTWARE",
+    description:
+      "Sviluppo software, applicazioni web e strumenti digitali, con particolare attenzione alla struttura del codice e alla progettazione.",
+    tags: [
+      "Java",
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "Flutter",
+      "Dart",
+      "Three.js",
+      "Git"
+    ]
+  },
+
+  systems: {
+    number: "02 / 04",
+    title: "SYSTEMS",
+    description:
+      "Fondamenti di sistemi operativi, networking e amministrazione di ambienti informatici.",
+    tags: [
+      "Linux",
+      "Bash",
+      "TCP/IP",
+      "DNS",
+      "Firewall",
+      "Windows",
+      "Active Directory",
+      "Git"
+    ]
+  },
+
+  security: {
+    number: "03 / 04",
+    title: "CYBERSECURITY",
+    description:
+      "Percorso di approfondimento orientato alla sicurezza di sistemi e reti, SOC, analisi degli incidenti e gestione delle vulnerabilità.",
+    tags: [
+      "SOC",
+      "MITRE ATT&CK",
+      "Phishing Analysis",
+      "Incident Response",
+      "Vulnerability Management",
+      "Network Security",
+      "Cloud Security",
+      "GRC"
+    ]
+  },
+
+  automation: {
+    number: "04 / 04",
+    title: "AUTOMATION",
+    description:
+      "Formazione universitaria nell'ambito dell'automazione, dei sistemi e del controllo.",
+    tags: [
+      "Control Systems",
+      "Automation",
+      "Systems",
+      "Programming",
+      "Engineering"
+    ]
+  }
+};
+
+/**
+ * Percorso formativo
+ */
+export const EXPERIENCE = [
+  {
+    year: "2025 — oggi",
+    title: "Ingegneria dell'Automazione e dei Sistemi",
+    org: "Università degli Studi di Padova",
+    desc:
+      "Percorso universitario orientato all'automazione, ai sistemi di controllo, alla programmazione e ai fondamenti dell'ingegneria dei sistemi."
+  },
+
+  {
+    year: "2025",
+    title: "Diploma di Informatica",
+    org: "ITIS Max Planck",
+    desc:
+      "Formazione tecnica in informatica con esperienza nello sviluppo software, programmazione Java, sviluppo web, database, networking e servizi web."
+  },
+
+  {
+    year: "2025",
+    title: "PCTO — Sviluppo software",
+    org: "Ideagrip",
+    desc:
+      "Esperienza formativa su database SQL e Crystal Reports, seguita da attività di sviluppo con Flutter e realizzazione di componenti per un portale aziendale."
+  }
+];

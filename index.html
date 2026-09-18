@@ -3,161 +3,568 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MATTEO CAROLLO — Software Engineer</title>
-  
-  <!-- Font esterni -->
+
+  <title>MATTEO CAROLLO — Software & IT</title>
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  
-  <!-- CSS personalizzato -->
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- CSS -->
   <link rel="stylesheet" href="src/CSS/style.css">
 </head>
+
 <body>
 
-    <!-- OVERLAY INTRO SCHERMO INTERO -->
-    <div id="intro-overlay" class="intro-overlay">
-        <div class="intro-content">
-          <h1 class="intro-name">MATTEO CAROLLO</h1>
-          <div class="intro-slider">
-            <span class="slide-text">Software Engineer</span>
-            <span class="slide-text">Backend Specialist</span>
-            <span class="slide-text">Distributed Systems</span>
-          </div>
-        </div>
-        <div class="intro-scroll-hint">SCROLL PER ENTRARE ↓</div>
+  <!-- ================================================================
+       INTRO
+  ================================================================= -->
+
+  <div id="intro-overlay" class="intro-overlay">
+
+    <div class="intro-content">
+
+      <h1 class="intro-name">
+        MATTEO CAROLLO
+      </h1>
+
+      <div class="intro-slider">
+
+        <span class="slide-text">
+          Software & IT
+        </span>
+
+        <span class="slide-text">
+          Cybersecurity
+        </span>
+
+        <span class="slide-text">
+          Automation & Systems
+        </span>
+
       </div>
 
-  <div class="side-label" aria-hidden="true">PORTFOLIO</div>
-
-  <!-- NAVIGATION -->
-  <header class="nav">
-    <div class="container nav-inner">
-      <div class="nav-mark"><span>DR</span>&nbsp;MATTEO CAROLLO</div>
-      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">MENU</button>
-      <nav class="nav-links" id="navLinks">
-        <a href="#info" data-nav>Info</a>
-        <a href="#work" data-nav>Progetti</a>
-        <a href="#skills" data-nav>Competenze</a>
-        <a href="#experience" data-nav>Percorso</a>
-        <a href="#contact" data-nav>Contatti</a>
-      </nav>
     </div>
+
+    <div class="intro-scroll-hint">
+      SCROLL PER ENTRARE ↓
+    </div>
+
+  </div>
+
+
+  <!-- Side label -->
+
+  <div class="side-label" aria-hidden="true">
+    PORTFOLIO
+  </div>
+
+
+  <!-- ================================================================
+       NAVIGATION
+  ================================================================= -->
+
+  <header class="nav">
+
+    <div class="container nav-inner">
+
+      <div class="nav-mark">
+        <span>MC</span>&nbsp;MATTEO CAROLLO
+      </div>
+
+      <button
+        class="nav-toggle"
+        id="navToggle"
+        aria-expanded="false"
+        aria-controls="navLinks"
+        type="button"
+      >
+        MENU
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+
+        <a href="#info" data-nav>
+          Info
+        </a>
+
+        <a href="#work" data-nav>
+          Progetti
+        </a>
+
+        <a href="#skills" data-nav>
+          Competenze
+        </a>
+
+        <a href="#experience" data-nav>
+          Percorso
+        </a>
+
+        <a href="#contact" data-nav>
+          Contatti
+        </a>
+
+      </nav>
+
+    </div>
+
   </header>
 
+
+  <!-- ================================================================
+       MAIN
+  ================================================================= -->
+
   <main>
-    <!-- HERO -->
+
+    <!-- ============================================================
+         HERO
+    ============================================================= -->
+
     <section class="hero container">
-      <div class="hero-eyebrow eyebrow">Software Engineer — Backend &amp; Sistemi Distribuiti</div>
-      <h1 class="hero-name">MATTEO<br><mark>CAROLLO</mark></h1>
+
+      <div class="hero-eyebrow eyebrow">
+        Software & IT — Cybersecurity — Automation
+      </div>
+
+      <h1 class="hero-name">
+        MATTEO<br>
+        <mark>CAROLLO</mark>
+      </h1>
+
       <p class="hero-statement">
-        Progetto e costruisco sistemi backend affidabili. Mi interessa il punto
-        in cui l'architettura pulita incontra i vincoli reali di scala, costo e
-        manutenzione.
+        Studente di Ingegneria dell'Automazione e dei Sistemi con
+        formazione informatica. Sviluppo progetti software e
+        approfondisco sistemi, networking e cybersecurity.
       </p>
 
-      <div class="meta-row" id="metaRow"></div>
+      <div
+        class="meta-row"
+        id="metaRow"
+      ></div>
+
     </section>
 
-    <!-- INFO -->
+
+    <!-- ============================================================
+         INFO
+    ============================================================= -->
+
     <section id="info" class="section">
+
       <div class="container">
+
         <div class="section-head">
-          <h2 class="section-title"><span class="n">01</span>Info</h2>
+
+          <h2 class="section-title">
+            <span class="n">01</span>
+            Info
+          </h2>
+
         </div>
+
+
         <div class="info-grid">
+
           <div>
-            <div class="eyebrow">Chi sono</div>
+
+            <div class="eyebrow">
+              Chi sono
+            </div>
+
           </div>
+
+
           <div class="info-lead">
+
             <p>
-              Sono un ingegnere del software con base a Milano, laureato in
-              Informatica all'Università di Bologna. Lavoro principalmente su
-              backend distribuiti, pipeline dati e strumenti interni per team
-              di sviluppo.
+              Sono uno studente di Ingegneria dell'Automazione e dei
+              Sistemi all'Università di Padova, con formazione
+              informatica. Mi interessa lo sviluppo software e il
+              rapporto tra software, sistemi e infrastrutture.
             </p>
+
             <p>
-              Credo in un'ingegneria pragmatica: preferisco sistemi noiosi e
-              prevedibili a soluzioni brillanti ma fragili. La maggior parte
-              del mio lavoro migliore è invisibile — funziona, e basta.
+              Parallelamente al percorso universitario approfondisco
+              cybersecurity, networking e sistemi Linux, sviluppando
+              progetti personali e sperimentando nuove tecnologie.
             </p>
+
 
             <div class="fact-list">
+
               <div class="fact">
-                <div class="fact-label">Formazione</div>
-                <div class="fact-value">Laurea in Informatica, Univ. di Bologna</div>
+
+                <div class="fact-label">
+                  Formazione
+                </div>
+
+                <div class="fact-value">
+                  Ingegneria dell'Automazione e dei Sistemi —
+                  Università di Padova
+                </div>
+
               </div>
+
+
               <div class="fact">
-                <div class="fact-label">Specializzazione</div>
-                <div class="fact-value">Sistemi backend &amp; distribuiti</div>
+
+                <div class="fact-label">
+                  Background
+                </div>
+
+                <div class="fact-value">
+                  Informatica — ITIS Max Planck
+                </div>
+
               </div>
+
+
               <div class="fact">
-                <div class="fact-label">Lingue</div>
-                <div class="fact-value">Italiano (madrelingua), Inglese (C1)</div>
+
+                <div class="fact-label">
+                  Focus
+                </div>
+
+                <div class="fact-value">
+                  Software · Systems · Cybersecurity
+                </div>
+
               </div>
+
+
               <div class="fact">
-                <div class="fact-label">Attualmente</div>
-                <div class="fact-value">Disponibile per progetti freelance</div>
+
+                <div class="fact-label">
+                  Lingue
+                </div>
+
+                <div class="fact-value">
+                  Italiano · Inglese · Tedesco in apprendimento
+                </div>
+
               </div>
+
             </div>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
 
-    <!-- WORK -->
+
+    <!-- ============================================================
+         PROJECTS
+    ============================================================= -->
+
     <section id="work" class="section">
+
       <div class="container">
+
         <div class="section-head">
-          <h2 class="section-title"><span class="n">02</span>Progetti selezionati</h2>
-          <div class="filters" id="filters"></div>
+
+          <h2 class="section-title">
+            <span class="n">02</span>
+            Progetti selezionati
+          </h2>
+
+          <div
+            class="filters"
+            id="filters"
+          ></div>
+
         </div>
-        <div class="project-list" id="projectList"></div>
+
+
+        <div
+          class="project-list"
+          id="projectList"
+        ></div>
+
       </div>
+
     </section>
 
-    <!-- SKILLS -->
-    <section id="skills" class="section section--invert">
+
+    <!-- ============================================================
+         SKILLS
+    ============================================================= -->
+
+    <section
+      id="skills"
+      class="section section--invert"
+    >
+
       <div class="container">
+
         <div class="section-head">
-          <h2 class="section-title"><span class="n">03</span>Competenze</h2>
+
+          <h2 class="section-title">
+            <span class="n">03</span>
+            Competenze
+          </h2>
+
         </div>
-        <div class="skills-grid" id="skillsGrid"></div>
+
+
+        <div class="skills-interface">
+
+          <div class="skills-display">
+
+            <div class="skills-display-top">
+
+              <span class="skills-label">
+                CURRENT FOCUS
+              </span>
+
+              <span
+                class="skills-counter"
+                id="skillsCounter"
+              >
+                01 / 04
+              </span>
+
+            </div>
+
+
+            <div class="skills-content">
+
+              <div
+                class="skills-category"
+                id="skillsCategory"
+              >
+                SOFTWARE
+              </div>
+
+              <p
+                class="skills-description"
+                id="skillsDescription"
+              >
+                Sviluppo software, applicazioni web e strumenti digitali.
+              </p>
+
+              <div
+                class="skills-tags"
+                id="skillsTags"
+              ></div>
+
+            </div>
+
+          </div>
+
+
+          <div class="skills-navigation">
+
+            <button
+              class="skill-nav-item is-active"
+              data-skill="software"
+              type="button"
+            >
+              <span class="skill-number">
+                01
+              </span>
+
+              <span class="skill-name">
+                Software
+              </span>
+
+              <span class="skill-arrow">
+                ↗
+              </span>
+            </button>
+
+
+            <button
+              class="skill-nav-item"
+              data-skill="systems"
+              type="button"
+            >
+              <span class="skill-number">
+                02
+              </span>
+
+              <span class="skill-name">
+                Systems
+              </span>
+
+              <span class="skill-arrow">
+                ↗
+              </span>
+            </button>
+
+
+            <button
+              class="skill-nav-item"
+              data-skill="security"
+              type="button"
+            >
+              <span class="skill-number">
+                03
+              </span>
+
+              <span class="skill-name">
+                Cybersecurity
+              </span>
+
+              <span class="skill-arrow">
+                ↗
+              </span>
+            </button>
+
+
+            <button
+              class="skill-nav-item"
+              data-skill="automation"
+              type="button"
+            >
+              <span class="skill-number">
+                04
+              </span>
+
+              <span class="skill-name">
+                Automation
+              </span>
+
+              <span class="skill-arrow">
+                ↗
+              </span>
+            </button>
+
+          </div>
+
+        </div>
+
       </div>
+
     </section>
 
-    <!-- EXPERIENCE -->
-    <section id="experience" class="section">
+
+    <!-- ============================================================
+         EXPERIENCE
+    ============================================================= -->
+
+    <section
+      id="experience"
+      class="section"
+    >
+
       <div class="container">
+
         <div class="section-head">
-          <h2 class="section-title"><span class="n">04</span>Percorso</h2>
+
+          <h2 class="section-title">
+            <span class="n">04</span>
+            Percorso
+          </h2>
+
         </div>
-        <div class="timeline" id="timeline"></div>
+
+
+        <div
+          class="timeline"
+          id="timeline"
+        ></div>
+
       </div>
+
     </section>
+
   </main>
 
-  <!-- FOOTER / CONTACT -->
-  <footer id="contact" class="footer">
+
+  <!-- ================================================================
+       FOOTER
+  ================================================================= -->
+
+  <footer
+    id="contact"
+    class="footer"
+  >
+
     <div class="container">
-      <div class="footer-statement">Parliamo del <span class="accent">prossimo progetto.</span></div>
+
+      <div class="footer-statement">
+        Parliamo del
+        <span class="accent">
+          prossimo progetto.
+        </span>
+      </div>
+
+
       <div class="footer-row">
+
         <div class="footer-links">
-          <a href="mailto:davide.rinaldi@example.com">davide.rinaldi@example.com</a>
-          <a href="#">github.com/davide-rinaldi</a>
-          <a href="#">linkedin.com/in/davide-rinaldi</a>
+
+          <a href="mailto:INSERISCI-LA-TUA-EMAIL">
+            Email
+          </a>
+
+          <a
+            href="https://github.com/Mcarollo-SYS"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            github.com/Mcarollo-SYS
+          </a>
+
+          <a
+            href="INSERISCI-LINKEDIN"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+
         </div>
-        <a class="cv-button" href="#">Scarica CV — PDF</a>
+
+
+        <a
+          class="cv-button"
+          href="#"
+        >
+          Scarica CV — PDF
+        </a>
+
       </div>
+
+
       <div class="footer-meta">
-        <span>© 2026 Davide Rinaldi</span>
-        <span>Milano, Italia</span>
+
+        <span>
+          © 2026 Matteo Carollo
+        </span>
+
+        <span>
+          Veneto, Italia
+        </span>
+
       </div>
+
     </div>
+
   </footer>
 
-  <!-- Script JavaScript -->
-  <script src="src/JS/data.js"></script>
-  <script src="src/JS/main.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+  <!-- ================================================================
+       JAVASCRIPT
+  ================================================================= -->
+
+  <script
+    type="module"
+    src="src/JS/main.js"
+  ></script>
+
 </body>
 </html>
