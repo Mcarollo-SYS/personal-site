@@ -1,52 +1,321 @@
-# 🌐 Personal Site — Dev Setup & Tunneling Guide
+<p align="center">
+  <img
+    src="https://capsule-render.vercel.app/api?type=transparent&fontColor=CFFF3E&fontSize=46&height=90&width=700&text=Personal%20Site"
+    alt="Personal Site"
+  />
+</p>
 
-Un portfolio personale moderno, responsive e ad alte prestazioni sviluppato con **HTML5**, **CSS3**, **JavaScript (ES6 Modules)**, **Anime.js** per le animazioni basate sullo scroll e **Three.js** per la resa grafica 3D.
+<p align="center">
+  <strong>Interactive portfolio · Three.js · Vite · Anime.js</strong>
+</p>
 
-Il progetto include una configurazione pronta all'uso per avviare il dev server locale di **Vite** e condividere il sito in tempo reale tramite tunnel HTTPS pubblici senza effettuare il deploy formale.
-
----
-
-## 📋 Indice del Documento
-
-1. [Prerequisiti](#1-prerequisiti)
-2. [Setup e Installazione](#2-setup-e-installazione)
-3. [Configurazione di Vite (`vite.config.js`)](#3-configurazione-di-vite-viteconfigjs)
-4. [Avvio del Server di Sviluppo](#4-avvio-del-server-di-sviluppo)
-5. [Guida al Tunneling Passo-Passo](#5-guida-al-tunneling-passo-passo)
-6. [Risoluzione Problemi ed Errori Comuni](#6-risoluzione-problemi-ed-errori-comuni)
-7. [Build & Anteprima di Produzione](#7-build--anteprima-di-produzione)
-
----
-
-## 1. Prerequisiti
-
-Assicurati che nel tuo ambiente locale siano installati:
-
-- **Node.js**: `>= 20.19.0` oppure `>= 22.12.0`
-- **npm**: `>= 10.0.0`
+<p align="center">
+  <a href="https://github.com/Mcarollo-SYS/personal-site">
+    <img src="https://img.shields.io/badge/SOURCE-GitHub-CFFF3E?style=for-the-badge&logo=github&logoColor=0d1117&labelColor=0d1117">
+  </a>
+  <a href="YOUR-VERCEL-URL">
+    <img src="https://img.shields.io/badge/LIVE-Vercel-CFFF3E?style=for-the-badge&logo=vercel&logoColor=0d1117&labelColor=0d1117">
+  </a>
+</p>
 
 ---
 
-## 2. Setup e Installazione
+## 🌐 About
 
-Clona il repository ed entra nella cartella principale:
+An interactive personal portfolio designed to combine **software development, 3D graphics and technical storytelling**.
+
+The website is built with:
+
+<p align="center">
+
+<img src="https://skillicons.dev/icons?i=html,css,js,vite,threejs" />
+
+</p>
+
+```text
+HTML5
+CSS3
+JavaScript ES6 Modules
+Vite
+Three.js
+WebGL
+Anime.js
+```
+
+---
+
+## ⚡ Features
+
+<table>
+<tr>
+<td width="50%">
+
+### 🎮 Interactive 3D
+
+Three.js + WebGL environment with interactive elements and real-time rendering.
+
+</td>
+<td width="50%">
+
+### 🎬 Animations
+
+Anime.js powered animations and scroll-based interactions.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+### 📱 Responsive
+
+Designed to work across desktop, tablet and mobile devices.
+
+</td>
+<td>
+
+### 🚀 Production Ready
+
+Optimized Vite build with automatic Vercel deployment.
+
+</td>
+</tr>
+</table>
+
+---
+
+## 🧩 Tech Stack
+
+<details open>
+<summary><b>Frontend</b></summary>
+
+<br>
+
+`HTML5` · `CSS3` · `JavaScript`
+
+</details>
+
+<details>
+<summary><b>3D & Graphics</b></summary>
+
+<br>
+
+`Three.js` · `WebGL`
+
+</details>
+
+<details>
+<summary><b>Animation</b></summary>
+
+<br>
+
+`Anime.js`
+
+</details>
+
+<details>
+<summary><b>Development</b></summary>
+
+<br>
+
+`Vite` · `Git` · `GitHub`
+
+</details>
+
+<details>
+<summary><b>Deployment</b></summary>
+
+<br>
+
+`Vercel` · `HTTPS` · `CDN`
+
+</details>
+
+---
+
+# 🛠️ Development
+
+### 01 — Clone
 
 ```bash
 git clone https://github.com/Mcarollo-SYS/personal-site.git
 cd personal-site
 ```
 
-Installa le dipendenze del progetto:
+### 02 — Install
 
 ```bash
 npm install
 ```
 
+### 03 — Start
+
+```bash
+npm run dev -- --port 5174
+```
+
+Open:
+
+```text
+http://localhost:5174
+```
+
 ---
 
-## 3. Configurazione di Vite (`vite.config.js`)
+## 🔄 Development Workflow
 
-Per consentire l'accesso al dev server tramite domini esterni generati da Cloudflare Tunnel, ngrok o Localtunnel, configura `vite.config.js` nella radice del progetto:
+```text
+┌────────────────────┐
+│     EDIT CODE      │
+└─────────┬──────────┘
+          ↓
+┌────────────────────┐
+│    Vite :5174      │
+│   Hot Reloading    │
+└─────────┬──────────┘
+          ↓
+┌────────────────────┐
+│   TEST LOCALLY     │
+└─────────┬──────────┘
+          ↓
+┌────────────────────┐
+│    git commit      │
+│     git push       │
+└─────────┬──────────┘
+          ↓
+┌────────────────────┐
+│      GitHub        │
+└─────────┬──────────┘
+          ↓
+┌────────────────────┐
+│      Vercel        │
+│   Automatic Build  │
+└─────────┬──────────┘
+          ↓
+┌────────────────────┐
+│    🌐 LIVE SITE    │
+└────────────────────┘
+```
+
+---
+
+# ☁️ Production
+
+The production website is hosted on **Vercel**.
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Hosting-Vercel-0d1117?style=for-the-badge&logo=vercel&logoColor=CFFF3E">
+  <img src="https://img.shields.io/badge/HTTPS-Enabled-0d1117?style=for-the-badge&logo=letsencrypt&logoColor=CFFF3E">
+  <img src="https://img.shields.io/badge/Deploy-Automatic-0d1117?style=for-the-badge&logo=github&logoColor=CFFF3E">
+</p>
+
+### How deployment works
+
+Every push to the repository triggers a new deployment:
+
+```text
+git push
+    │
+    ▼
+ GitHub
+    │
+    ▼
+ Vercel detects commit
+    │
+    ├── npm install
+    │
+    ├── npm run build
+    │
+    └── deploy
+         │
+         ▼
+      🌐 LIVE
+```
+
+There is no need to manually upload `dist/`.
+
+---
+
+# 🧪 Production Preview
+
+Generate the production build:
+
+```bash
+npm run build
+```
+
+Output:
+
+```text
+dist/
+├── index.html
+└── assets/
+```
+
+Preview the production build locally:
+
+```bash
+npm run preview -- --port 4173
+```
+
+Open:
+
+```text
+http://localhost:4173
+```
+
+---
+
+# 🌍 Temporary Public Development
+
+For temporary external access without deploying:
+
+<details>
+<summary><b>☁️ Cloudflare Tunnel</b></summary>
+
+<br>
+
+```bash
+npx cloudflared tunnel --url http://localhost:5174
+```
+
+Generates a temporary HTTPS URL:
+
+```text
+https://xxxx.trycloudflare.com
+```
+
+</details>
+
+<details>
+<summary><b>🔗 Localtunnel</b></summary>
+
+<br>
+
+```bash
+npx localtunnel --port 5174
+```
+
+</details>
+
+<details>
+<summary><b>🌐 ngrok</b></summary>
+
+<br>
+
+```bash
+npx ngrok http 5174
+```
+
+</details>
+
+> Tunneling is intended for **development and testing**. Production is handled by Vercel.
+
+---
+
+# ⚙️ Vite Configuration
+
+External tunnels require Vite to accept the generated hostname.
 
 ```javascript
 import { defineConfig } from 'vite';
@@ -54,143 +323,102 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   server: {
     host: true,
-    // Permette a Vite di ascoltare su tutte le interfacce di rete
     allowedHosts: true
-    // Autorizza le connessioni da qualsiasi host esterno
   }
 });
 ```
 
-> **Nota:** `allowedHosts: true` autorizza qualsiasi hostname. È utile per lo sviluppo locale e il tunneling, ma non è consigliato per un server esposto permanentemente a Internet.
+<details>
+<summary>⚠️ Security note</summary>
+
+<br>
+
+`allowedHosts: true` allows requests from any hostname.
+
+This configuration is useful for temporary development tunnels but should not be considered a hardened production configuration.
+
+The production application runs through Vercel.
+
+</details>
 
 ---
 
-## 4. Avvio del Server di Sviluppo
+# 📦 Commands
 
-Nel terminale principale esegui:
-
-```bash
-npm run dev
-```
-
-Il dev server verrà avviato all'indirizzo:
-
-```text
-http://localhost:5173
-```
-
-Mantieni questo terminale in esecuzione durante tutta la sessione di sviluppo.
+| Command | Purpose |
+|---|---|
+| `npm install` | Install dependencies |
+| `npm run dev` | Development server |
+| `npm run build` | Production build |
+| `npm run preview` | Preview production build |
 
 ---
 
-## 5. Guida al Tunneling Passo-Passo
-
-Per condividere il sito in tempo reale tramite un link HTTPS pubblico, apri un secondo terminale e utilizza uno dei seguenti metodi.
-
-### Metodo A — Cloudflare Tunnel
-
-Nel secondo terminale:
-
-```bash
-npx cloudflared tunnel --url http://localhost:5173
-```
-
-Attendi la generazione dell'URL pubblico. Verrà mostrato un indirizzo simile a:
+# 📁 Project Structure
 
 ```text
-https://xxxx-xxxx-xxxx.trycloudflare.com
+personal-site/
+│
+├── public/
+│   ├── models/
+│   ├── textures/
+│   └── ...
+│
+├── src/
+│   ├── main.js
+│   ├── style.css
+│   └── ...
+│
+├── index.html
+├── package.json
+├── package-lock.json
+├── vite.config.js
+└── README.md
 ```
-
-Copia l'URL con dominio `.trycloudflare.com` e condividilo.
-
-### Metodo B — Localtunnel
-
-Nel secondo terminale:
-
-```bash
-npx localtunnel --port 5173
-```
-
-Copia l'URL restituito, ad esempio:
-
-```text
-https://xxxx.loca.lt
-```
-
-> **Nota:** alla prima apertura, il destinatario potrebbe dover inserire l'IP pubblico del dev host.
-
-### Metodo C — ngrok
-
-ngrok richiede un account e un authtoken.
-
-Configura il token una sola volta:
-
-```bash
-npx ngrok config add-authtoken IL_TUO_TOKEN
-```
-
-Avvia quindi il tunnel:
-
-```bash
-npx ngrok http 5173
-```
-
-Copia l'indirizzo HTTPS mostrato nella voce `Forwarding`.
 
 ---
 
-## 6. Risoluzione Problemi ed Errori Comuni
+# 🔐 Security
 
-### `Blocked Request`
-
-Se il browser mostra un errore `Blocked Request`:
-
-1. Controlla che `allowedHosts: true` sia presente in `vite.config.js`.
-2. Salva il file.
-3. Arresta Vite.
-4. Riavvia:
+Dependencies are regularly checked using:
 
 ```bash
-npm run dev
+npm audit
 ```
 
-### `CACError: Unknown option '--allowedHosts'`
+Current production build:
 
-Le versioni recenti di Vite non richiedono l'utilizzo di `--allowedHosts` direttamente dalla CLI.
-
-Utilizza la configurazione:
-
-```javascript
-server: {
-  host: true,
-  allowedHosts: true
-}
+```text
+Vite 8.3.0
+Node.js 22.12+
+npm audit → 0 vulnerabilities
 ```
-
-all'interno di `vite.config.js`.
-
-### `Operation timed out` — SSH / porta 22
-
-Se la rete o il firewall bloccano le connessioni SSH in uscita, evita strumenti che utilizzano SSH per il tunneling e utilizza Cloudflare Tunnel, Localtunnel o ngrok.
 
 ---
 
-## 7. Build & Anteprima di Produzione
+## 📊 Project Status
 
-Per creare la build ottimizzata:
+<p align="center">
 
-```bash
-npm run build
-```
+<img src="https://img.shields.io/badge/Build-Passing-CFFF3E?style=flat-square&labelColor=0d1117">
+<img src="https://img.shields.io/badge/Security-0%20Vulnerabilities-CFFF3E?style=flat-square&labelColor=0d1117">
+<img src="https://img.shields.io/badge/Deploy-Vercel-CFFF3E?style=flat-square&labelColor=0d1117">
+<img src="https://img.shields.io/badge/Status-Active-CFFF3E?style=flat-square&labelColor=0d1117">
 
-La build verrà generata nella cartella:
+</p>
 
-```text
-dist/
-```
+---
 
-Per testare localmente la build di produzione:
+<p align="center">
+  <a href="YOUR-VERCEL-URL">
+    <img src="https://capsule-render.vercel.app/api?type=rect&color=0d1117&height=45&text=🌐%20Visit%20the%20Live%20Portfolio&fontColor=CFFF3E&fontSize=17">
+  </a>
+</p>
 
-```bash
-npm run preview
-```
+<p align="center">
+  <sub>Built with Vite · Three.js · Anime.js · JavaScript</sub>
+</p>
+
+<p align="center">
+  <sub>Building, learning and improving — one project at a time.</sub>
+</p>
