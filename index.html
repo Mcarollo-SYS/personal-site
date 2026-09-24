@@ -19,6 +19,14 @@
     rel="stylesheet"
   >
 
+  <script>
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+
+    window.scrollTo(0, 0);
+  </script>
+
   <!-- CSS -->
   <link rel="stylesheet" href="src/CSS/style.css">
 </head>

@@ -1,3 +1,11 @@
+
+// Reset scroll position when the page loads
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+
+window.scrollTo(0, 0);
+
 import {
   META,
   PROJECTS,
@@ -892,7 +900,7 @@ function handleIntroTouchMove(event) {
     touchStartY - currentY;
 
 
-  if (delta > 0) {
+  if (delta > 30) {
 
 
     touchStartY = currentY;
@@ -1064,7 +1072,7 @@ function playIntroAnimation() {
     "touchmove",
     handleIntroTouchMove,
     {
-      passive: true
+      passive: false
     }
   );
 
@@ -1122,6 +1130,7 @@ async function updateGithubDates() {
 =================================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
+  window.scrollTo(0, 0);
 
   renderMeta();
 
