@@ -78,20 +78,6 @@ export const PROJECTS = [
     ]
   },
 
-  {
-    id: "progetto-gpo",
-    title: "Progetto GPO",
-    category: "Systems",
-    year: "2025",
-    description:
-      "Progetto orientato alla configurazione e alla gestione di sistemi Windows attraverso Group Policy, con approfondimento dei concetti di amministrazione dei sistemi e gestione degli ambienti di rete.",
-    stack: [
-      "Windows",
-      "Group Policy",
-      "Active Directory",
-      "Networking"
-    ]
-  }
 ];
 
 /**
