@@ -1070,6 +1070,49 @@ function playIntroAnimation() {
 
 }
 
+/* ===============================================================
+     update projetc
+  =============================================================== */
+
+const GITHUB_USER = "Mcarollo-SYS";
+
+async function updateGithubDates() {
+  const elements = document.querySelectorAll("[data-repo]");
+
+  for (const element of elements) {
+    const repo = element.dataset.repo;
+
+    try {
+      const response = await fetch(
+        `https://api.github.com/repos/${GITHUB_USER}/${repo}`
+      );
+
+      if (!response.ok) {
+        throw new Error(`GitHub API error: ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      const date = new Date(data.pushed_at);
+
+      const formattedDate = new Intl.DateTimeFormat("en-GB", {
+        day: "2-digit",
+        month: "short",
+        year: "numeric"
+      }).format(date);
+
+      element.textContent = `UPDATED ${formattedDate.toUpperCase()}`;
+
+    } catch (error) {
+      console.error(`Unable to fetch GitHub data for ${repo}:`, error);
+
+      element.textContent = "UPDATED — UNAVAILABLE";
+    }
+  }
+}
+
+
+
 
 
 
@@ -1095,5 +1138,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initMobileNav();
 
   playIntroAnimation();
+
+  updateGithubDates();
 
 });
