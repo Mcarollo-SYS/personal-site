@@ -1,10 +1,18 @@
 
-// Reset scroll position when the page loads
+/* ================================================================
+   SCROLL RESET
+================================================================ */
+
 if ("scrollRestoration" in history) {
   history.scrollRestoration = "manual";
 }
 
 window.scrollTo(0, 0);
+
+
+/* ================================================================
+   IMPORTS
+================================================================ */
 
 import {
   META,
@@ -22,9 +30,9 @@ import {
 } from "https://cdn.jsdelivr.net/npm/animejs@4.2.2/+esm";
 
 
-/* ===================================================================
+/* ================================================================
    RENDER — META
-=================================================================== */
+================================================================ */
 
 function renderMeta() {
   const el = document.getElementById("metaRow");
@@ -40,9 +48,9 @@ function renderMeta() {
 }
 
 
-/* ===================================================================
+/* ================================================================
    PROJECT FILTERS
-=================================================================== */
+================================================================ */
 
 function renderFilters(activeCategory) {
   const categories = [
@@ -75,9 +83,9 @@ function renderFilters(activeCategory) {
 }
 
 
-/* ===================================================================
+/* ================================================================
    PROJECTS
-=================================================================== */
+================================================================ */
 
 function renderProjects(filter = "Tutti") {
   const list =
@@ -130,6 +138,7 @@ function renderProjects(filter = "Tutti") {
               ${project.description}
             </p>
 
+
             <div class="project-stack">
               ${project.stack.map(stackItem => `
                 <span class="stack-chip">
@@ -137,6 +146,7 @@ function renderProjects(filter = "Tutti") {
                 </span>
               `).join("")}
             </div>
+
 
             ${
               project.motionPath
@@ -209,9 +219,9 @@ function renderProjects(filter = "Tutti") {
 }
 
 
-/* ===================================================================
+/* ================================================================
    TIMELINE
-=================================================================== */
+================================================================ */
 
 function renderTimeline() {
   const el = document.getElementById("timeline");
@@ -246,9 +256,9 @@ function renderTimeline() {
 }
 
 
-/* ===================================================================
+/* ================================================================
    SKILLS — INTERACTIVE
-=================================================================== */
+================================================================ */
 
 function initSkillsInterface() {
   const buttons =
@@ -276,6 +286,7 @@ function initSkillsInterface() {
     return;
   }
 
+
   function updateSkills(type) {
     const data = SKILLS[type];
 
@@ -287,6 +298,7 @@ function initSkillsInterface() {
       tags,
       counter
     ]);
+
 
     animate(
       [
@@ -303,7 +315,8 @@ function initSkillsInterface() {
 
         onComplete: () => {
 
-          category.textContent = data.title;
+          category.textContent =
+            data.title;
 
           description.textContent =
             data.description;
@@ -319,6 +332,7 @@ function initSkillsInterface() {
                 </span>
               `)
               .join("");
+
 
           animate(
             [
@@ -339,6 +353,7 @@ function initSkillsInterface() {
       }
     );
 
+
     buttons.forEach(button => {
       button.classList.toggle(
         "is-active",
@@ -347,19 +362,21 @@ function initSkillsInterface() {
     });
   }
 
+
   buttons.forEach(button => {
     button.addEventListener("click", () => {
       updateSkills(button.dataset.skill);
     });
   });
 
+
   updateSkills("software");
 }
 
 
-/* ===================================================================
+/* ================================================================
    SCROLL SPY
-=================================================================== */
+================================================================ */
 
 function initScrollSpy() {
   const links =
@@ -375,6 +392,7 @@ function initScrollSpy() {
     .filter(Boolean);
 
   if (!sections.length) return;
+
 
   const observer =
     new IntersectionObserver(
@@ -399,6 +417,7 @@ function initScrollSpy() {
           });
 
           link.classList.add("is-active");
+
         });
 
       },
@@ -407,15 +426,16 @@ function initScrollSpy() {
       }
     );
 
+
   sections.forEach(section => {
     observer.observe(section);
   });
 }
 
 
-/* ===================================================================
+/* ================================================================
    MOBILE NAVIGATION
-=================================================================== */
+================================================================ */
 
 function initMobileNav() {
   const toggle =
@@ -426,6 +446,7 @@ function initMobileNav() {
 
   if (!toggle || !links) return;
 
+
   toggle.addEventListener("click", () => {
 
     const isOpen =
@@ -435,7 +456,9 @@ function initMobileNav() {
       "aria-expanded",
       String(isOpen)
     );
+
   });
+
 
   links.querySelectorAll("a").forEach(link => {
 
@@ -454,15 +477,16 @@ function initMobileNav() {
 }
 
 
-/* ===================================================================
+/* ================================================================
    PROJECT ANIMATIONS
-=================================================================== */
+================================================================ */
 
 function initProjectAnimations() {
   const rows =
     document.querySelectorAll(".project-row");
 
   if (!rows.length) return;
+
 
   rows.forEach(row => {
 
@@ -481,24 +505,29 @@ function initProjectAnimations() {
     const chips =
       row.querySelectorAll(".stack-chip");
 
+
     if (!head || !detail) return;
+
 
     detail.style.height = "0px";
     detail.style.overflow = "hidden";
 
 
-    /* ---------------------------------------------------------------
+    /* --------------------------------------------------------------
        HOVER
-    --------------------------------------------------------------- */
+    -------------------------------------------------------------- */
 
     head.addEventListener("mouseenter", () => {
 
-      if (!window.matchMedia("(hover: hover)").matches) {
+      if (
+        !window.matchMedia("(hover: hover)").matches
+      ) {
         return;
       }
 
       remove(plus);
       remove(index);
+
 
       animate(plus, {
         rotate: 45,
@@ -507,11 +536,13 @@ function initProjectAnimations() {
         ease: "outBack"
       });
 
+
       animate(index, {
         scale: 1.08,
         duration: 250,
         ease: "outQuad"
       });
+
     });
 
 
@@ -520,30 +551,37 @@ function initProjectAnimations() {
       remove(plus);
       remove(index);
 
+
       animate(index, {
         scale: 1,
         duration: 250,
         ease: "outQuad"
       });
 
-      animate(plus, {
-        rotate: row.classList.contains("is-open")
-          ? 45
-          : 0,
 
-        scale: row.classList.contains("is-open")
-          ? 1.15
-          : 1,
+      animate(plus, {
+
+        rotate:
+          row.classList.contains("is-open")
+            ? 45
+            : 0,
+
+        scale:
+          row.classList.contains("is-open")
+            ? 1.15
+            : 1,
 
         duration: 300,
         ease: "outQuad"
+
       });
+
     });
 
 
-    /* ---------------------------------------------------------------
+    /* --------------------------------------------------------------
        CLICK
-    --------------------------------------------------------------- */
+    -------------------------------------------------------------- */
 
     head.addEventListener("click", () => {
 
@@ -551,9 +589,9 @@ function initProjectAnimations() {
         row.classList.contains("is-open");
 
 
-      /* -------------------------------------------------------------
+      /* ------------------------------------------------------------
          CLOSE OTHER ROWS
-      ------------------------------------------------------------- */
+      ------------------------------------------------------------ */
 
       rows.forEach(otherRow => {
 
@@ -563,13 +601,16 @@ function initProjectAnimations() {
           return;
         }
 
+
         otherRow.classList.remove("is-open");
+
 
         const otherDetail =
           otherRow.querySelector(".project-detail");
 
         const otherPlus =
           otherRow.querySelector(".project-plus");
+
 
         if (otherDetail) {
 
@@ -580,7 +621,9 @@ function initProjectAnimations() {
             duration: 400,
             ease: "inOutQuad"
           });
+
         }
+
 
         if (otherPlus) {
 
@@ -592,40 +635,51 @@ function initProjectAnimations() {
             duration: 300,
             ease: "outQuad"
           });
+
         }
+
       });
 
 
-      /* =============================================================
+      /* ============================================================
          OPEN
-      ============================================================= */
+      ============================================================ */
 
       if (!isOpen) {
 
         row.classList.add("is-open");
 
+
         detail.style.display = "block";
         detail.style.height = "auto";
 
+
         const height =
           detail.scrollHeight;
+
 
         detail.style.height = "0px";
 
         remove(detail);
 
+
         animate(detail, {
+
           height,
+
           duration: 500,
+
           ease: "outQuart",
 
           onComplete: () => {
             detail.style.height = "auto";
           }
+
         });
 
 
         remove(plus);
+
 
         animate(plus, {
           rotate: 45,
@@ -640,65 +694,87 @@ function initProjectAnimations() {
           remove(chips);
 
           animate(chips, {
+
             translateY: [15, 0],
             opacity: [0, 1],
+
             delay: stagger(60),
+
             duration: 400,
+
             ease: "outCubic"
+
           });
+
         }
 
       }
 
 
-      /* =============================================================
+      /* ============================================================
          CLOSE
-      ============================================================= */
+      ============================================================ */
 
       else {
 
         row.classList.remove("is-open");
+
 
         detail.style.height =
           `${detail.scrollHeight}px`;
 
         detail.offsetHeight;
 
+
         remove(detail);
 
+
         animate(detail, {
+
           height: 0,
+
           duration: 400,
+
           ease: "inOutQuad",
 
           onComplete: () => {
             detail.style.height = "0px";
           }
+
         });
 
 
         remove(plus);
 
+
         animate(plus, {
+
           rotate: 0,
           scale: 1,
+
           duration: 300,
+
           ease: "outQuad"
+
         });
+
       }
+
     });
+
   });
 }
 
 
-/* ===================================================================
+/* ================================================================
    PROJECT — SVG MOTION PATH
-=================================================================== */
+================================================================ */
 
 function initProjectMotionPaths() {
 
   const projects =
     document.querySelectorAll(".project-row");
+
 
   projects.forEach(project => {
 
@@ -711,6 +787,7 @@ function initProjectMotionPaths() {
     const car =
       project.querySelector(".motion-car");
 
+
     if (!motionSvg || !path || !car) {
       return;
     }
@@ -721,41 +798,58 @@ function initProjectMotionPaths() {
 
 
     animate(car, {
+
       ...motionPath,
+
       ease: "linear",
+
       duration: 5000,
+
       loop: true
+
     });
 
 
     const drawable =
       svg.createDrawable(path);
 
+
     animate(drawable, {
+
       draw: "0 1",
+
       ease: "linear",
+
       duration: 5000,
+
       loop: true
+
     });
 
   });
 }
 
-/* ===================================================================
-   INTRO
-=================================================================== */
+
+/* ================================================================
+   INTRO — STATE
+================================================================ */
 
 let introTimeline = null;
+
 let isIntroActive = true;
+
 let introFinished = false;
+
+let touchStartY = 0;
+
 
 const introOverlay =
   document.getElementById("intro-overlay");
 
 
-/* ===================================================================
-   COMPLETE INTRO EXIT
-=================================================================== */
+/* ================================================================
+   INTRO — COMPLETE EXIT
+================================================================ */
 
 function completeIntroExit() {
 
@@ -763,28 +857,32 @@ function completeIntroExit() {
     return;
   }
 
+
   introFinished = true;
   isIntroActive = false;
+
 
   if (introTimeline) {
     introTimeline.pause();
   }
 
 
-  /*
-   * Riabilita immediatamente lo scroll normale.
-   */
+  /* --------------------------------------------------------------
+     RESTORE SCROLL
+  -------------------------------------------------------------- */
 
   document.body.classList.remove("no-scroll");
 
 
-  /*
-   * Mostra il sito.
-   */
+  /* --------------------------------------------------------------
+     SHOW MAIN CONTENT
+  -------------------------------------------------------------- */
 
-  const mainElements = document.querySelectorAll(
-    "header.nav, main, footer"
-  );
+  const mainElements =
+    document.querySelectorAll(
+      "header.nav, main, footer"
+    );
+
 
   mainElements.forEach(element => {
 
@@ -794,26 +892,65 @@ function completeIntroExit() {
   });
 
 
-  /*
-   * Chiude l'intro.
-   */
+  /* --------------------------------------------------------------
+     CLOSE SYSTEM FRAME
+  -------------------------------------------------------------- */
+
+  animate(".frame-top", {
+    scaleX: [1, 0],
+    duration: 350,
+    ease: "inCubic"
+  });
+
+
+  animate(".frame-bottom", {
+    scaleX: [1, 0],
+    duration: 350,
+    ease: "inCubic"
+  });
+
+
+  animate(".frame-left", {
+    scaleY: [1, 0],
+    duration: 350,
+    ease: "inCubic"
+  });
+
+
+  animate(".frame-right", {
+    scaleY: [1, 0],
+    duration: 350,
+    ease: "inCubic"
+  });
+
+
+  /* --------------------------------------------------------------
+     CLOSE INTRO OVERLAY
+  -------------------------------------------------------------- */
 
   if (introOverlay) {
 
-    introOverlay.style.pointerEvents = "none";
+    introOverlay.style.pointerEvents =
+      "none";
+
 
     animate(introOverlay, {
 
       translateY: "-100%",
+
       opacity: 0,
 
       duration: 550,
+
       ease: "outCubic",
 
       onComplete: () => {
 
-        introOverlay.style.display = "none";
-        introOverlay.style.visibility = "hidden";
+        introOverlay.style.display =
+          "none";
+
+        introOverlay.style.visibility =
+          "hidden";
 
       }
 
@@ -822,58 +959,59 @@ function completeIntroExit() {
   }
 
 
-  /*
-   * Rimuoviamo i listener dell'intro.
-   */
+  /* --------------------------------------------------------------
+     REMOVE INTRO LISTENERS
+  -------------------------------------------------------------- */
 
   window.removeEventListener(
     "wheel",
     handleIntroWheel
   );
 
+
   window.removeEventListener(
     "touchstart",
     handleIntroTouchStart
   );
 
+
   window.removeEventListener(
     "touchmove",
     handleIntroTouchMove
   );
-
 }
 
 
-
-
-/* ===================================================================
-   WHEEL
-=================================================================== */
-
+/* ================================================================
+   INTRO — DESKTOP WHEEL
+================================================================ */
 
 function handleIntroWheel(event) {
-  if (!isIntroActive) return;
 
-  // Qualsiasi scroll verso il basso chiude completamente l'intro.
+  if (!isIntroActive) {
+    return;
+  }
+
+
   if (event.deltaY > 0) {
+
     event.preventDefault();
+
 
     if (introTimeline) {
       introTimeline.pause();
     }
 
+
     completeIntroExit();
+
   }
 }
 
 
-
-/* ===================================================================
-   TOUCH
-=================================================================== */
-
-let touchStartY = 0;
-
+/* ================================================================
+   INTRO — MOBILE TOUCH START
+================================================================ */
 
 function handleIntroTouchStart(event) {
 
@@ -881,11 +1019,15 @@ function handleIntroTouchStart(event) {
     return;
   }
 
+
   touchStartY =
     event.touches[0].clientY;
-
 }
 
+
+/* ================================================================
+   INTRO — MOBILE TOUCH MOVE
+================================================================ */
 
 function handleIntroTouchMove(event) {
 
@@ -893,8 +1035,10 @@ function handleIntroTouchMove(event) {
     return;
   }
 
+
   const currentY =
     event.touches[0].clientY;
+
 
   const delta =
     touchStartY - currentY;
@@ -902,17 +1046,25 @@ function handleIntroTouchMove(event) {
 
   if (delta > 30) {
 
+    event.preventDefault();
 
     touchStartY = currentY;
 
-  }
 
+    if (introTimeline) {
+      introTimeline.pause();
+    }
+
+
+    completeIntroExit();
+
+  }
 }
 
 
-/* ===================================================================
-   PLAY INTRO
-=================================================================== */
+/* ================================================================
+   INTRO — PLAY
+================================================================ */
 
 function playIntroAnimation() {
 
@@ -925,16 +1077,16 @@ function playIntroAnimation() {
   introFinished = false;
 
 
-  /*
-   * Blocchiamo temporaneamente lo scroll della pagina.
-   */
+  /* --------------------------------------------------------------
+     LOCK PAGE SCROLL
+  -------------------------------------------------------------- */
 
   document.body.classList.add("no-scroll");
 
 
-  /*
-   * Stato iniziale.
-   */
+  /* --------------------------------------------------------------
+     RESET PAGE POSITION
+  -------------------------------------------------------------- */
 
   window.scrollTo({
     top: 0,
@@ -943,64 +1095,163 @@ function playIntroAnimation() {
   });
 
 
+  /* --------------------------------------------------------------
+     RESET INTRO
+  -------------------------------------------------------------- */
+
   introOverlay.style.display = "flex";
-  introOverlay.style.visibility = "visible";
-  introOverlay.style.pointerEvents = "auto";
-  introOverlay.style.opacity = "1";
+
+  introOverlay.style.visibility =
+    "visible";
+
+  introOverlay.style.pointerEvents =
+    "auto";
+
+  introOverlay.style.opacity =
+    "1";
+
   introOverlay.style.transform =
     "translateY(0)";
 
 
-  /*
-   * Contenuto principale nascosto.
-   */
+  /* --------------------------------------------------------------
+     HIDE MAIN CONTENT
+  -------------------------------------------------------------- */
 
-  const mainElements = document.querySelectorAll(
-    "header.nav, main, footer"
-  );
+  const mainElements =
+    document.querySelectorAll(
+      "header.nav, main, footer"
+    );
+
 
   mainElements.forEach(element => {
 
     element.style.opacity = "0";
+
     element.style.transform = "none";
 
   });
 
 
-  /* ===============================================================
-     TIMELINE AUTOMATICA
-  =============================================================== */
+  /* ================================================================
+     INTRO TIMELINE
+  ================================================================ */
 
-  introTimeline = createTimeline({
+  introTimeline =
+    createTimeline({
 
-    defaults: {
-      ease: "outExpo"
-    }
+      defaults: {
+        ease: "outExpo"
+      }
+
+    });
+
+
+  /* --------------------------------------------------------------
+     SYSTEM FRAME
+  -------------------------------------------------------------- */
+
+  introTimeline.add(".frame-top", {
+
+    scaleX: [0, 1],
+
+    duration: 650
 
   });
 
 
-  /*
-   * Nome.
-   */
+  introTimeline.add(".frame-right", {
 
-  introTimeline.add(".intro-name", {
+    scaleY: [0, 1],
+
+    duration: 450
+
+  }, "-=250");
+
+
+  introTimeline.add(".frame-bottom", {
+
+    scaleX: [0, 1],
+
+    duration: 550
+
+  }, "-=200");
+
+
+  introTimeline.add(".frame-left", {
+
+    scaleY: [0, 1],
+
+    duration: 450
+
+  }, "-=250");
+
+
+  /* --------------------------------------------------------------
+     FRAME CORNERS
+  -------------------------------------------------------------- */
+
+  introTimeline.add(".frame-corner", {
 
     opacity: [0, 1],
-    translateY: [40, 0],
 
-    duration: 900,
-    delay: 200
+    scale: [0.6, 1],
 
-  });
+    duration: 300,
+
+    delay: stagger(60)
+
+  }, "-=200");
 
 
-  /*
-   * Testi.
-   */
+  /* --------------------------------------------------------------
+     SYSTEM LABEL
+  -------------------------------------------------------------- */
 
-  const slides =
-    document.querySelectorAll(".slide-text");
+  introTimeline.add(".intro-system", {
+
+    opacity: [0, 1],
+
+    translateY: [6, 0],
+
+    duration: 350
+
+  }, "-=250");
+
+
+  /* --------------------------------------------------------------
+     CODE / IDENTITY
+  -------------------------------------------------------------- */
+
+  introTimeline.add(".intro-code", {
+
+    opacity: [0, 1],
+
+    translateY: [10, 0],
+
+    duration: 350
+
+  }, "-=150");
+
+
+
+ /* ===============================================================
+   IDENTITY
+=============================================================== */
+
+introTimeline.add(".intro-name", {
+  opacity: [0, 1],
+  translateY: [40, 0],
+  duration: 700,
+  ease: "outCubic"
+});
+
+
+  /* --------------------------------------------------------------
+     SLIDES
+  -------------------------------------------------------------- */
+
+  const slides = document.querySelectorAll(".slide-text");
 
 
   slides.forEach((slide, index) => {
@@ -1008,6 +1259,7 @@ function playIntroAnimation() {
     introTimeline.add(slide, {
 
       opacity: [0, 1],
+
       translateY: [20, 0],
 
       duration: 350
@@ -1018,9 +1270,11 @@ function playIntroAnimation() {
     introTimeline.add(slide, {
 
       opacity: [1, 0],
+
       translateY: [0, -20],
 
       duration: 350,
+
       delay:
         index === slides.length - 1
           ? 500
@@ -1031,24 +1285,22 @@ function playIntroAnimation() {
   });
 
 
-  /*
-   * Fine automatica.
-   */
+  /* --------------------------------------------------------------
+     AUTOMATIC EXIT
+  -------------------------------------------------------------- */
 
   introTimeline.call(() => {
 
     if (!introFinished) {
-
       completeIntroExit();
-
     }
 
   });
 
 
-  /* ===============================================================
-     EVENTI
-  =============================================================== */
+  /* ================================================================
+     INPUT EVENTS
+  ================================================================ */
 
   window.addEventListener(
     "wheel",
@@ -1075,79 +1327,122 @@ function playIntroAnimation() {
       passive: false
     }
   );
-
 }
 
-/* ===============================================================
-     update projetc
-  =============================================================== */
 
-const GITHUB_USER = "Mcarollo-SYS";
+/* ================================================================
+   GITHUB — PROJECT UPDATED DATES
+================================================================ */
+
+const GITHUB_USER =
+  "Mcarollo-SYS";
+
 
 async function updateGithubDates() {
-  const elements = document.querySelectorAll("[data-repo]");
+
+  const elements =
+    document.querySelectorAll("[data-repo]");
+
 
   for (const element of elements) {
-    const repo = element.dataset.repo;
+
+    const repo =
+      element.dataset.repo;
+
 
     try {
-      const response = await fetch(
-        `https://api.github.com/repos/${GITHUB_USER}/${repo}`
-      );
+
+      const response =
+        await fetch(
+          `https://api.github.com/repos/${GITHUB_USER}/${repo}`
+        );
+
 
       if (!response.ok) {
-        throw new Error(`GitHub API error: ${response.status}`);
+        throw new Error(
+          `GitHub API error: ${response.status}`
+        );
       }
 
-      const data = await response.json();
 
-      const date = new Date(data.pushed_at);
+      const data =
+        await response.json();
 
-      const formattedDate = new Intl.DateTimeFormat("en-GB", {
-        day: "2-digit",
-        month: "short",
-        year: "numeric"
-      }).format(date);
 
-      element.textContent = `UPDATED ${formattedDate.toUpperCase()}`;
+      const date =
+        new Date(data.pushed_at);
 
-    } catch (error) {
-      console.error(`Unable to fetch GitHub data for ${repo}:`, error);
 
-      element.textContent = "UPDATED — UNAVAILABLE";
+      const formattedDate =
+        new Intl.DateTimeFormat(
+          "en-GB",
+          {
+            day: "2-digit",
+            month: "short",
+            year: "numeric"
+          }
+        ).format(date);
+
+
+      element.textContent =
+        `UPDATED ${formattedDate.toUpperCase()}`;
+
     }
+
+
+    catch (error) {
+
+      console.error(
+        `Unable to fetch GitHub data for ${repo}:`,
+        error
+      );
+
+
+      element.textContent =
+        "UPDATED — UNAVAILABLE";
+
+    }
+
   }
 }
 
 
-
-
-
-
-
-/* ===================================================================
+/* ================================================================
    INITIALIZATION
-=================================================================== */
+================================================================ */
 
-document.addEventListener("DOMContentLoaded", () => {
-  window.scrollTo(0, 0);
+document.addEventListener(
+  "DOMContentLoaded",
+  () => {
 
-  renderMeta();
+    /* Always start at the top */
+    window.scrollTo(0, 0);
 
-  renderFilters("Tutti");
 
-  renderProjects("Tutti");
+    /* Render */
+    renderMeta();
 
-  renderTimeline();
+    renderFilters("Tutti");
 
-  initSkillsInterface();
+    renderProjects("Tutti");
 
-  initScrollSpy();
+    renderTimeline();
 
-  initMobileNav();
 
-  playIntroAnimation();
+    /* Interfaces */
+    initSkillsInterface();
 
-  updateGithubDates();
+    initScrollSpy();
 
-});
+    initMobileNav();
+
+
+    /* Intro */
+    playIntroAnimation();
+
+
+    /* GitHub */
+    updateGithubDates();
+
+  }
+);
