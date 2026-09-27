@@ -17,17 +17,10 @@ window.scrollTo(0, 0);
 import {
   META,
   PROJECTS,
-  SKILLS,
   EXPERIENCE
 } from "./data.js";
 
-import {
-  animate,
-  createTimeline,
-  remove,
-  stagger,
-  svg
-} from "https://cdn.jsdelivr.net/npm/animejs@4.2.2/+esm";
+import { animate, createTimeline, remove, stagger, svg } from "animejs";
 
 
 /* ================================================================
@@ -39,12 +32,20 @@ function renderMeta() {
 
   if (!el) return;
 
-  el.innerHTML = META.map(item => `
-    <div class="meta-cell">
-      <div class="meta-label">${item.label}</div>
-      <div class="meta-value">${item.value}</div>
-    </div>
-  `).join("");
+  const fragment = document.createDocumentFragment();
+  META.forEach(({ label, value }) => {
+    const cell = document.createElement("div");
+    cell.className = "meta-cell";
+    const labelEl = document.createElement("div");
+    labelEl.className = "meta-label";
+    labelEl.textContent = label;
+    const valueEl = document.createElement("div");
+    valueEl.className = "meta-value";
+    valueEl.textContent = value;
+    cell.append(labelEl, valueEl);
+    fragment.append(cell);
+  });
+  el.replaceChildren(fragment);
 }
 
 
@@ -62,20 +63,21 @@ function renderFilters(activeCategory) {
 
   if (!el) return;
 
-  el.innerHTML = categories.map(category => `
-    <button
-      class="filter-btn ${category === activeCategory ? "is-active" : ""}"
-      data-filter="${category}"
-      type="button"
-    >
-      ${category}
-    </button>
-  `).join("");
+  const fragment = document.createDocumentFragment();
+  categories.forEach(category => {
+    const button = document.createElement("button");
+    button.className = `filter-btn ${category === activeCategory ? "is-active" : ""}`;
+    button.dataset.filter = category;
+    button.type = "button";
+    button.setAttribute("aria-pressed", String(category === activeCategory));
+    button.textContent = category;
+    fragment.append(button);
+  });
+  el.replaceChildren(fragment);
 
   el.querySelectorAll("[data-filter]").forEach(button => {
     button.addEventListener("click", () => {
       const category = button.dataset.filter;
-
       renderFilters(category);
       renderProjects(category);
     });
@@ -97,122 +99,92 @@ function renderProjects(filter = "Tutti") {
 
   if (!el) return;
 
-  el.innerHTML = list.map((project, index) => `
-    <div
-      class="project-row"
-      data-id="${project.id}"
-    >
-
-      <div class="project-row-head">
-
-        <div class="index-number">
-          ${String(index + 1).padStart(2, "0")}
-        </div>
-
-        <div class="project-title">
-          ${project.title}
-        </div>
-
-        <div class="project-tag">
-          ${project.category}
-        </div>
-
-        <div class="project-year">
-          ${project.year}
-        </div>
-
-        <div class="project-plus">
-          +
-        </div>
-
-      </div>
-
-
-      <div class="project-detail">
-
-        <div class="project-detail-inner">
-
-          <div class="project-detail-content">
-
-            <p class="project-desc">
-              ${project.description}
-            </p>
-
-
-            <div class="project-stack">
-              ${project.stack.map(stackItem => `
-                <span class="stack-chip">
-                  ${stackItem}
-                </span>
-              `).join("")}
-            </div>
-
-
-            ${
-              project.motionPath
-                ? `
-                  <div class="project-motion">
-
-                    <svg
-                      class="motion-svg"
-                      viewBox="0 0 800 300"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-
-                      <path
-                        class="motion-path"
-                        d="
-                          M 40 220
-                          C 140 80,
-                            220 80,
-                            300 180
-                          S 470 300,
-                            560 150
-                          S 700 40,
-                            760 100
-                        "
-                        fill="none"
-                      />
-
-                      <g class="motion-car">
-
-                        <rect
-                          x="-22"
-                          y="-10"
-                          width="44"
-                          height="20"
-                          rx="4"
-                        />
-
-                        <circle
-                          cx="-13"
-                          cy="12"
-                          r="5"
-                        />
-
-                        <circle
-                          cx="13"
-                          cy="12"
-                          r="5"
-                        />
-
-                      </g>
-
-                    </svg>
-
-                  </div>
-                `
-                : ""
-            }
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-  `).join("");
+  const fragment = document.createDocumentFragment();
+  list.forEach((project, index) => {
+    const row = document.createElement("article");
+    row.className = "project-row";
+    row.dataset.id = project.id;
+    const head = document.createElement("button");
+    head.className = "project-row-head";
+    head.type = "button";
+    head.setAttribute("aria-expanded", "false");
+    head.setAttribute("aria-controls", `project-detail-${project.id}`);
+    const fields = [
+      ["index-number", String(index + 1).padStart(2, "0")],
+      ["project-title", project.title],
+      ["project-tag", project.category],
+      ["project-year", project.year],
+      ["project-plus", "+"]
+    ];
+    fields.forEach(([className, text]) => {
+      const node = document.createElement("span");
+      node.className = className;
+      node.textContent = text;
+      if (className === "project-plus") node.setAttribute("aria-hidden", "true");
+      head.append(node);
+    });
+    const detail = document.createElement("div");
+    detail.className = "project-detail";
+    detail.id = `project-detail-${project.id}`;
+    detail.setAttribute("aria-hidden", "true");
+    const inner = document.createElement("div");
+    inner.className = "project-detail-inner";
+    const content = document.createElement("div");
+    content.className = "project-detail-content";
+    const description = document.createElement("p");
+    description.className = "project-desc";
+    description.textContent = project.description;
+    const stack = document.createElement("div");
+    stack.className = "project-stack";
+    project.stack.forEach(item => {
+      const chip = document.createElement("span");
+      chip.className = "stack-chip";
+      chip.textContent = item;
+      stack.append(chip);
+    });
+    content.append(description, stack);
+    if (project.repository) {
+      const repositoryLink = document.createElement("a");
+      repositoryLink.className = "project-link";
+      repositoryLink.href = project.repository;
+      repositoryLink.target = "_blank";
+      repositoryLink.rel = "noopener noreferrer";
+      repositoryLink.tabIndex = -1;
+      repositoryLink.setAttribute("aria-label", `Apri il repository GitHub di ${project.title}`);
+      repositoryLink.textContent = "Repository GitHub ↗";
+      content.append(repositoryLink);
+    }
+    if (project.motionPath) {
+      const motion = document.createElement("div");
+      motion.className = "project-motion";
+      const svgNode = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      svgNode.classList.add("motion-svg");
+      svgNode.setAttribute("viewBox", "0 0 800 300");
+      svgNode.setAttribute("aria-hidden", "true");
+      const path = document.createElementNS(svgNode.namespaceURI, "path");
+      path.classList.add("motion-path");
+      path.setAttribute("d", "M 40 220 C 140 80, 220 80, 300 180 S 470 300, 560 150 S 700 40, 760 100");
+      path.setAttribute("fill", "none");
+      const car = document.createElementNS(svgNode.namespaceURI, "g");
+      car.classList.add("motion-car");
+      const rect = document.createElementNS(svgNode.namespaceURI, "rect");
+      Object.entries({ x: "-22", y: "-10", width: "44", height: "20", rx: "4" }).forEach(([key, value]) => rect.setAttribute(key, value));
+      car.append(rect);
+      [["-13", "12"], ["13", "12"]].forEach(([cx, cy]) => {
+        const wheel = document.createElementNS(svgNode.namespaceURI, "circle");
+        Object.entries({ cx, cy, r: "5" }).forEach(([key, value]) => wheel.setAttribute(key, value));
+        car.append(wheel);
+      });
+      svgNode.append(path, car);
+      motion.append(svgNode);
+      content.append(motion);
+    }
+    inner.append(content);
+    detail.append(inner);
+    row.append(head, detail);
+    fragment.append(row);
+  });
+  el.replaceChildren(fragment);
 
   initProjectAnimations();
   initProjectMotionPaths();
@@ -228,149 +200,27 @@ function renderTimeline() {
 
   if (!el) return;
 
-  el.innerHTML = EXPERIENCE.map(item => `
-    <div class="timeline-row">
-
-      <div class="timeline-year">
-        ${item.year}
-      </div>
-
-      <div>
-
-        <div class="timeline-title">
-          ${item.title}
-        </div>
-
-        <div class="timeline-org">
-          ${item.org}
-        </div>
-
-      </div>
-
-      <div class="timeline-desc">
-        ${item.desc}
-      </div>
-
-    </div>
-  `).join("");
-}
-
-
-/* ================================================================
-   SKILLS — INTERACTIVE
-================================================================ */
-
-function initSkillsInterface() {
-  const buttons =
-    document.querySelectorAll(".skill-nav-item");
-
-  const category =
-    document.getElementById("skillsCategory");
-
-  const description =
-    document.getElementById("skillsDescription");
-
-  const tags =
-    document.getElementById("skillsTags");
-
-  const counter =
-    document.getElementById("skillsCounter");
-
-  if (
-    !buttons.length ||
-    !category ||
-    !description ||
-    !tags ||
-    !counter
-  ) {
-    return;
-  }
-
-
-  function updateSkills(type) {
-    const data = SKILLS[type];
-
-    if (!data) return;
-
-    remove([
-      category,
-      description,
-      tags,
-      counter
-    ]);
-
-
-    animate(
-      [
-        category,
-        description,
-        tags,
-        counter
-      ],
-      {
-        opacity: 0,
-        translateY: 12,
-        duration: 180,
-        ease: "inQuad",
-
-        onComplete: () => {
-
-          category.textContent =
-            data.title;
-
-          description.textContent =
-            data.description;
-
-          counter.textContent =
-            data.number;
-
-          tags.innerHTML =
-            data.tags
-              .map(tag => `
-                <span class="skill-tag">
-                  ${tag}
-                </span>
-              `)
-              .join("");
-
-
-          animate(
-            [
-              category,
-              description,
-              tags,
-              counter
-            ],
-            {
-              opacity: [0, 1],
-              translateY: [12, 0],
-              duration: 450,
-              delay: stagger(60),
-              ease: "outCubic"
-            }
-          );
-        }
+  const fragment = document.createDocumentFragment();
+  EXPERIENCE.forEach(item => {
+    const row = document.createElement("div");
+    row.className = "timeline-row";
+    [["timeline-year", item.year], ["timeline-title", item.title], ["timeline-org", item.org], ["timeline-desc", item.desc]].forEach(([className, text]) => {
+      const node = document.createElement("div");
+      node.className = className;
+      node.textContent = text;
+      if (className === "timeline-title") {
+        const group = document.createElement("div");
+        group.append(node);
+        row.append(group);
+      } else if (className === "timeline-org") {
+        row.lastElementChild.append(node);
+      } else {
+        row.append(node);
       }
-    );
-
-
-    buttons.forEach(button => {
-      button.classList.toggle(
-        "is-active",
-        button.dataset.skill === type
-      );
     });
-  }
-
-
-  buttons.forEach(button => {
-    button.addEventListener("click", () => {
-      updateSkills(button.dataset.skill);
-    });
+    fragment.append(row);
   });
-
-
-  updateSkills("software");
+  el.replaceChildren(fragment);
 }
 
 
@@ -437,6 +287,23 @@ function initScrollSpy() {
    MOBILE NAVIGATION
 ================================================================ */
 
+function initEmailFallback() {
+  const link = document.querySelector("[data-email-fallback]");
+  const status = document.querySelector("[data-email-fallback-status]");
+
+  if (!link || !status) return;
+
+  link.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText("matteo.carollo.webdev@gmail.com");
+      status.textContent = "Indirizzo email copiato: matteo.carollo.webdev@gmail.com";
+    } catch {
+      status.textContent = "Puoi scrivermi a matteo.carollo.webdev@gmail.com";
+    }
+  });
+}
+
+
 function initMobileNav() {
   const toggle =
     document.getElementById("navToggle");
@@ -456,6 +323,10 @@ function initMobileNav() {
       "aria-expanded",
       String(isOpen)
     );
+    toggle.setAttribute(
+      "aria-label",
+      isOpen ? "Chiudi menu di navigazione" : "Apri menu di navigazione"
+    );
 
   });
 
@@ -470,9 +341,19 @@ function initMobileNav() {
         "aria-expanded",
         "false"
       );
+      toggle.setAttribute("aria-label", "Apri menu di navigazione");
 
     });
 
+  });
+
+  links.addEventListener("keydown", event => {
+    if (event.key === "Escape" && links.classList.contains("is-open")) {
+      links.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Apri menu di navigazione");
+      toggle.focus();
+    }
   });
 }
 
@@ -587,6 +468,10 @@ function initProjectAnimations() {
 
       const isOpen =
         row.classList.contains("is-open");
+      head.setAttribute("aria-expanded", String(!isOpen));
+      detail.setAttribute("aria-hidden", String(isOpen));
+      const repositoryLink = row.querySelector(".project-link");
+      if (repositoryLink) repositoryLink.tabIndex = isOpen ? -1 : 0;
 
 
       /* ------------------------------------------------------------
@@ -610,6 +495,11 @@ function initProjectAnimations() {
 
         const otherPlus =
           otherRow.querySelector(".project-plus");
+
+        otherRow.querySelector(".project-row-head")?.setAttribute("aria-expanded", "false");
+        otherDetail?.setAttribute("aria-hidden", "true");
+        const otherRepositoryLink = otherRow.querySelector(".project-link");
+        if (otherRepositoryLink) otherRepositoryLink.tabIndex = -1;
 
 
         if (otherDetail) {
@@ -1375,7 +1265,7 @@ async function updateGithubDates() {
 
       const formattedDate =
         new Intl.DateTimeFormat(
-          "en-GB",
+          "it-IT",
           {
             day: "2-digit",
             month: "short",
@@ -1385,7 +1275,7 @@ async function updateGithubDates() {
 
 
       element.textContent =
-        `UPDATED ${formattedDate.toUpperCase()}`;
+        `AGGIORNATO ${formattedDate.toUpperCase()}`;
 
     }
 
@@ -1399,7 +1289,7 @@ async function updateGithubDates() {
 
 
       element.textContent =
-        "UPDATED — UNAVAILABLE";
+        "DATA NON DISPONIBILE";
 
     }
 
@@ -1429,12 +1319,11 @@ document.addEventListener(
     renderTimeline();
 
 
-    /* Interfaces */
-    initSkillsInterface();
-
     initScrollSpy();
 
     initMobileNav();
+
+    initEmailFallback();
 
 
     /* Intro */

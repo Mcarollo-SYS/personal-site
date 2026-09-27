@@ -1,424 +1,109 @@
-<p align="center">
-  <img
-    src="https://capsule-render.vercel.app/api?type=transparent&fontColor=CFFF3E&fontSize=46&height=90&width=700&text=Personal%20Site"
-    alt="Personal Site"
-  />
-</p>
+<div align="center">
 
-<p align="center">
-  <strong>Interactive portfolio · Three.js · Vite · Anime.js</strong>
-</p>
+# MATTEO CAROLLO
 
-<p align="center">
-  <a href="https://github.com/Mcarollo-SYS/personal-site">
-    <img src="https://img.shields.io/badge/SOURCE-GitHub-CFFF3E?style=for-the-badge&logo=github&logoColor=0d1117&labelColor=0d1117">
-  </a>
-  <a href="YOUR-VERCEL-URL">
-    <img src="https://img.shields.io/badge/LIVE-Vercel-CFFF3E?style=for-the-badge&logo=vercel&logoColor=0d1117&labelColor=0d1117">
-  </a>
-</p>
+### Siti web e strumenti digitali · Matteo Carollo
+
+Siti web su misura, strumenti digitali e supporto tecnico per freelance e piccole attività. I progetti mostrano esempi concreti del lavoro e dell’approccio.
+
+<br>
+
+![Vite](https://img.shields.io/badge/Vite-8-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES%20Modules-F7DF1E?style=for-the-badge&logo=javascript&logoColor=111111)
+![Vercel](https://img.shields.io/badge/Hosting-Vercel%20ready-111111?style=for-the-badge&logo=vercel&logoColor=white)
+
+[Progetti](#progetti) · [Tecnologie](#tecnologie) · [Avvio-locale](#avvio-locale) · [Struttura](#struttura) · [Sicurezza](#sicurezza)
+
+</div>
 
 ---
 
-## 🌐 About
+## Il progetto
 
-An interactive personal portfolio designed to combine **software development, 3D graphics and technical storytelling**.
+Il sito presenta i servizi di Matteo Carollo: realizzazione di siti web, prototipi e strumenti digitali, integrazioni e interventi tecnici di base. I progetti selezionati offrono esempi concreti delle competenze e del metodo di lavoro. L’interfaccia mantiene una direzione visiva essenziale, con animazioni leggere e contenuti aggiornabili da file dedicati.
 
-The website is built with:
+È un sito statico realizzato con HTML, CSS e JavaScript: non richiede un backend né un database.
 
-<p align="center">
+## Progetti
 
-<img src="https://skillicons.dev/icons?i=html,css,js,vite,threejs" />
+Una selezione di lavori con descrizioni, tecnologie e collegamenti ai repository:
 
-</p>
+| Progetto | Descrizione | Tecnologie |
+| --- | --- | --- |
+| [GPO — Ambiente 3D interattivo](https://github.com/Mcarollo-SYS/Progetto-GPO) | Scena web esplorabile con veicolo guidabile e simulazione fisica. | JavaScript, Three.js, Cannon.js |
+| [NoteSpese](https://github.com/Mcarollo-SYS/PROGETTO-FLUTTER) | App mobile per registrare e analizzare entrate e uscite, collegata a un'API. | Flutter, PHP, MySQL, REST |
+| [TPS Web Service](https://github.com/Mcarollo-SYS/TPS-WEB_SERVICE) | API per gestire auto, marche e clienti, con client desktop Java. | Java, PHP, MySQL, XML |
+| [Escape Room](https://github.com/Mcarollo-SYS/Escape-room-4-year) | Gioco puzzle 2D con architettura MVC e logica concorrente. | Java, Swing, multithreading |
+| [Aegis Home](https://github.com/Mcarollo-SYS/Aegis-home) | Progetto in sviluppo per monitorare il traffico e gli eventi di sicurezza di una rete domestica. | Python, FastAPI, PostgreSQL, React |
 
-```text
-HTML5
-CSS3
-JavaScript ES6 Modules
-Vite
-Three.js
-WebGL
-Anime.js
-```
+## Tecnologie
 
----
+- **Interfaccia:** HTML, CSS e JavaScript ES modules
+- **Build e sviluppo:** Vite
+- **Animazioni:** Anime.js, installato come dipendenza npm locale
+- **Hosting previsto:** Vercel
 
-## ⚡ Features
+Three.js compare nei progetti presentati, ma non è una dipendenza del portfolio.
 
-<table>
-<tr>
-<td width="50%">
+## Avvio locale
 
-### 🎮 Interactive 3D
-
-Three.js + WebGL environment with interactive elements and real-time rendering.
-
-</td>
-<td width="50%">
-
-### 🎬 Animations
-
-Anime.js powered animations and scroll-based interactions.
-
-</td>
-</tr>
-
-<tr>
-<td>
-
-### 📱 Responsive
-
-Designed to work across desktop, tablet and mobile devices.
-
-</td>
-<td>
-
-### 🚀 Production Ready
-
-Optimized Vite build with automatic Vercel deployment.
-
-</td>
-</tr>
-</table>
-
----
-
-## 🧩 Tech Stack
-
-<details open>
-<summary><b>Frontend</b></summary>
-
-<br>
-
-`HTML5` · `CSS3` · `JavaScript`
-
-</details>
-
-<details>
-<summary><b>3D & Graphics</b></summary>
-
-<br>
-
-`Three.js` · `WebGL`
-
-</details>
-
-<details>
-<summary><b>Animation</b></summary>
-
-<br>
-
-`Anime.js`
-
-</details>
-
-<details>
-<summary><b>Development</b></summary>
-
-<br>
-
-`Vite` · `Git` · `GitHub`
-
-</details>
-
-<details>
-<summary><b>Deployment</b></summary>
-
-<br>
-
-`Vercel` · `HTTPS` · `CDN`
-
-</details>
-
----
-
-# 🛠️ Development
-
-### 01 — Clone
+Requisiti: Node.js `20.19+` oppure `22.12+` e npm.
 
 ```bash
 git clone https://github.com/Mcarollo-SYS/personal-site.git
 cd personal-site
+npm ci
+npm run dev
 ```
 
-### 02 — Install
+Vite avvia il server di sviluppo su `http://localhost:5174`.
 
-```bash
-npm install
-```
-
-### 03 — Start
-
-```bash
-npm run dev -- --port 5174
-```
-
-Open:
-
-```text
-http://localhost:5174
-```
-
----
-
-## 🔄 Development Workflow
-
-```text
-┌────────────────────┐
-│     EDIT CODE      │
-└─────────┬──────────┘
-          ↓
-┌────────────────────┐
-│    Vite :5174      │
-│   Hot Reloading    │
-└─────────┬──────────┘
-          ↓
-┌────────────────────┐
-│   TEST LOCALLY     │
-└─────────┬──────────┘
-          ↓
-┌────────────────────┐
-│    git commit      │
-│     git push       │
-└─────────┬──────────┘
-          ↓
-┌────────────────────┐
-│      GitHub        │
-└─────────┬──────────┘
-          ↓
-┌────────────────────┐
-│      Vercel        │
-│   Automatic Build  │
-└─────────┬──────────┘
-          ↓
-┌────────────────────┐
-│    🌐 LIVE SITE    │
-└────────────────────┘
-```
-
----
-
-# ☁️ Production
-
-The production website is hosted on **Vercel**.
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Hosting-Vercel-0d1117?style=for-the-badge&logo=vercel&logoColor=CFFF3E">
-  <img src="https://img.shields.io/badge/HTTPS-Enabled-0d1117?style=for-the-badge&logo=letsencrypt&logoColor=CFFF3E">
-  <img src="https://img.shields.io/badge/Deploy-Automatic-0d1117?style=for-the-badge&logo=github&logoColor=CFFF3E">
-</p>
-
-### How deployment works
-
-Every push to the repository triggers a new deployment:
-
-```text
-git push
-    │
-    ▼
- GitHub
-    │
-    ▼
- Vercel detects commit
-    │
-    ├── npm install
-    │
-    ├── npm run build
-    │
-    └── deploy
-         │
-         ▼
-      🌐 LIVE
-```
-
-There is no need to manually upload `dist/`.
-
----
-
-# 🧪 Production Preview
-
-Generate the production build:
+### Build di produzione
 
 ```bash
 npm run build
+npm run preview
 ```
 
-Output:
+La build viene generata nella cartella `dist/`; l'anteprima locale usa la porta `4173`.
 
-```text
-dist/
-├── index.html
-└── assets/
-```
-
-Preview the production build locally:
-
-```bash
-npm run preview -- --port 4173
-```
-
-Open:
-
-```text
-http://localhost:4173
-```
-
----
-
-# 🌍 Temporary Public Development
-
-For temporary external access without deploying:
-
-<details>
-<summary><b>☁️ Cloudflare Tunnel</b></summary>
-
-<br>
-
-```bash
-npx cloudflared tunnel --url http://localhost:5174
-```
-
-Generates a temporary HTTPS URL:
-
-```text
-https://xxxx.trycloudflare.com
-```
-
-</details>
-
-<details>
-<summary><b>🔗 Localtunnel</b></summary>
-
-<br>
-
-```bash
-npx localtunnel --port 5174
-```
-
-</details>
-
-<details>
-<summary><b>🌐 ngrok</b></summary>
-
-<br>
-
-```bash
-npx ngrok http 5174
-```
-
-</details>
-
-> Tunneling is intended for **development and testing**. Production is handled by Vercel.
-
----
-
-# ⚙️ Vite Configuration
-
-External tunnels require Vite to accept the generated hostname.
-
-```javascript
-import { defineConfig } from 'vite';
-
-export default defineConfig({
-  server: {
-    host: true,
-    allowedHosts: true
-  }
-});
-```
-
-<details>
-<summary>⚠️ Security note</summary>
-
-<br>
-
-`allowedHosts: true` allows requests from any hostname.
-
-This configuration is useful for temporary development tunnels but should not be considered a hardened production configuration.
-
-The production application runs through Vercel.
-
-</details>
-
----
-
-# 📦 Commands
-
-| Command | Purpose |
-|---|---|
-| `npm install` | Install dependencies |
-| `npm run dev` | Development server |
-| `npm run build` | Production build |
-| `npm run preview` | Preview production build |
-
----
-
-# 📁 Project Structure
+## Struttura
 
 ```text
 personal-site/
-│
-├── public/
-│   ├── models/
-│   ├── textures/
-│   └── ...
-│
-├── src/
-│   ├── main.js
-│   ├── style.css
-│   └── ...
-│
-├── index.html
-├── package.json
-├── package-lock.json
-├── vite.config.js
-└── README.md
+├── index.html             # Struttura e contenuti statici
+├── vercel.json            # Header HTTP per la distribuzione Vercel
+├── vite.config.js         # Configurazione del server e della build
+└── src/
+    ├── CSS/
+    │   └── style.css      # Layout, tema e responsive design
+    └── JS/
+        ├── data.js        # Testi, progetti, competenze e percorso
+        └── main.js        # Rendering, interazioni e animazioni
 ```
 
----
+### Aggiornare i contenuti
 
-# 🔐 Security
+- Modifica progetti, competenze e percorso formativo in `src/JS/data.js`.
+- Modifica sezioni e testi di base in `index.html`.
+- Modifica stile e adattamento mobile in `src/CSS/style.css`.
 
-Dependencies are regularly checked using:
+## Sicurezza
+
+La configurazione Vercel aggiunge Content Security Policy e header per la protezione da content sniffing, framing indesiderato e accesso non necessario a funzionalità del browser. La policy consente solo le risorse richieste dal sito: asset locali, Google Fonts e l'API pubblica GitHub usata per mostrare la data di aggiornamento del repository Aegis Home.
+
+Anime.js viene servito dal bundle locale, senza import runtime da CDN. I contenuti dei progetti sono creati tramite API DOM e `textContent`.
+
+Per controllare le dipendenze:
 
 ```bash
 npm audit
 ```
 
-Current production build:
-
-```text
-Vite 8.3.0
-Node.js 22.12+
-npm audit → 0 vulnerabilities
-```
-
 ---
 
-## 📊 Project Status
+<div align="center">
 
-<p align="center">
+Realizzato da **Matteo Carollo** · [GitHub](https://github.com/Mcarollo-SYS)
 
-<img src="https://img.shields.io/badge/Build-Passing-CFFF3E?style=flat-square&labelColor=0d1117">
-<img src="https://img.shields.io/badge/Security-0%20Vulnerabilities-CFFF3E?style=flat-square&labelColor=0d1117">
-<img src="https://img.shields.io/badge/Deploy-Vercel-CFFF3E?style=flat-square&labelColor=0d1117">
-<img src="https://img.shields.io/badge/Status-Active-CFFF3E?style=flat-square&labelColor=0d1117">
-
-</p>
-
----
-
-<p align="center">
-  <a href="YOUR-VERCEL-URL">
-    <img src="https://capsule-render.vercel.app/api?type=rect&color=0d1117&height=45&text=🌐%20Visit%20the%20Live%20Portfolio&fontColor=CFFF3E&fontSize=17">
-  </a>
-</p>
-
-<p align="center">
-  <sub>Built with Vite · Three.js · Anime.js · JavaScript</sub>
-</p>
-
-<p align="center">
-  <sub>Building, learning and improving — one project at a time.</sub>
-</p>
+</div>

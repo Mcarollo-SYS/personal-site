@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Siti web su misura, prototipi digitali e supporto tecnico per freelance e piccole attività. Parla con Matteo del tuo progetto.">
+  <meta name="theme-color" content="#0A0A0A">
 
-  <title>MATTEO CAROLLO — Software & IT</title>
+  <title>Siti web e strumenti digitali — Matteo Carollo</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,14 +20,6 @@
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap"
     rel="stylesheet"
   >
-
-  <script>
-    if ("scrollRestoration" in history) {
-      history.scrollRestoration = "manual";
-    }
-
-    window.scrollTo(0, 0);
-  </script>
 
   <!-- CSS -->
   <link rel="stylesheet" href="src/CSS/style.css">
@@ -118,6 +112,7 @@
       <button
         class="nav-toggle"
         id="navToggle"
+        aria-label="Apri menu di navigazione"
         aria-expanded="false"
         aria-controls="navLinks"
         type="button"
@@ -125,22 +120,22 @@
         MENU
       </button>
 
-      <nav class="nav-links" id="navLinks">
+      <nav class="nav-links" id="navLinks" aria-label="Navigazione principale">
 
         <a href="#info" data-nav>
-          Info
+          Servizi
         </a>
 
         <a href="#work" data-nav>
           Progetti
         </a>
 
-        <a href="#skills" data-nav>
-          Competenze
+        <a href="#method" data-nav>
+          Metodo
         </a>
 
-        <a href="#experience" data-nav>
-          Percorso
+        <a href="#about" data-nav>
+          Chi sono
         </a>
 
         <a href="#contact" data-nav>
@@ -167,19 +162,24 @@
     <section class="hero container">
 
       <div class="hero-eyebrow eyebrow">
-        Software & IT — Cybersecurity — Automation
+        SITI WEB · APPLICAZIONI · SUPPORTO TECNICO
       </div>
 
       <h1 class="hero-name">
-        MATTEO<br>
-        <mark>CAROLLO</mark>
+        SITI WEB<br>
+        <mark>SU MISURA.</mark>
       </h1>
 
       <p class="hero-statement">
-        Studente di Ingegneria dell'Automazione e dei Sistemi con
-        formazione informatica. Sviluppo progetti software e
-        approfondisco sistemi, networking e cybersecurity.
+        Creo siti vetrina e strumenti digitali per freelance e piccole
+        attività: progetti curati, chiari da usare e pensati per funzionare
+        su ogni schermo.
       </p>
+
+      <div class="hero-actions">
+        <a class="action-primary" href="mailto:matteo.carollo.webdev@gmail.com?subject=Parliamo%20del%20mio%20progetto">Parliamo del tuo progetto <span aria-hidden="true">↗</span></a>
+        <a class="action-secondary" href="#info">Scopri i servizi <span aria-hidden="true">↓</span></a>
+      </div>
 
       <div
         class="meta-row"
@@ -190,7 +190,7 @@
 
 
     <!-- ============================================================
-         INFO
+         SERVICES
     ============================================================= -->
 
     <section id="info" class="section">
@@ -200,98 +200,53 @@
         <div class="section-head">
 
           <h2 class="section-title">
-            <span class="n">01</span>
-            Info
+            Servizi
           </h2>
 
         </div>
 
 
-        <div class="info-grid">
+        <p class="section-intro">
+          Dall'idea alla pagina online: un supporto diretto per dare forma
+          alla tua presenza digitale e far funzionare meglio il tuo sito.
+        </p>
 
-          <div>
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="service-kicker">WEB · DESIGN · SVILUPPO</div>
+            <h3>Siti web che presentano bene la tua attività.</h3>
+            <p>Siti vetrina, landing page e portfolio con una struttura chiara, un'identità visiva curata e un'esperienza che si adatta a telefono e desktop.</p>
+            <ul>
+              <li>Struttura e pagine essenziali</li>
+              <li>Design responsive</li>
+              <li>Contatti e collegamenti ai tuoi canali</li>
+            </ul>
+            <a href="mailto:matteo.carollo.webdev@gmail.com?subject=Richiesta%20sito%20web">Parliamo del sito <span aria-hidden="true">↗</span></a>
+          </article>
 
-            <div class="eyebrow">
-              Chi sono
-            </div>
+          <article class="service-card">
+            <div class="service-kicker">APP · PROTOTIPI · API</div>
+            <h3>Strumenti digitali pensati per un compito preciso.</h3>
+            <p>Prototipi web o mobile e piccole applicazioni per organizzare informazioni, semplificare un flusso o collegare servizi esistenti.</p>
+            <ul>
+              <li>Interfacce e funzionalità su misura</li>
+              <li>Integrazioni tramite API</li>
+              <li>Prototipi per mettere alla prova un'idea</li>
+            </ul>
+            <a href="mailto:matteo.carollo.webdev@gmail.com?subject=Richiesta%20app%20o%20strumento%20digitale">Descrivimi l'idea <span aria-hidden="true">↗</span></a>
+          </article>
 
-          </div>
-
-
-          <div class="info-lead">
-
-            <p>
-              Sono uno studente di Ingegneria dell'Automazione e dei
-              Sistemi all'Università di Padova, con formazione
-              informatica. Mi interessa lo sviluppo software e il
-              rapporto tra software, sistemi e infrastrutture.
-            </p>
-
-            <p>
-              Parallelamente al percorso universitario approfondisco
-              cybersecurity, networking e sistemi Linux, sviluppando
-              progetti personali e sperimentando nuove tecnologie.
-            </p>
-
-
-            <div class="fact-list">
-
-              <div class="fact">
-
-                <div class="fact-label">
-                  Formazione
-                </div>
-
-                <div class="fact-value">
-                  Ingegneria dell'Automazione e dei Sistemi —
-                  Università di Padova
-                </div>
-
-              </div>
-
-
-              <div class="fact">
-
-                <div class="fact-label">
-                  Background
-                </div>
-
-                <div class="fact-value">
-                  Informatica — ITIS Max Planck
-                </div>
-
-              </div>
-
-
-              <div class="fact">
-
-                <div class="fact-label">
-                  Focus
-                </div>
-
-                <div class="fact-value">
-                  Software · Systems · Cybersecurity
-                </div>
-
-              </div>
-
-
-              <div class="fact">
-
-                <div class="fact-label">
-                  Lingue
-                </div>
-
-                <div class="fact-value">
-                  Italiano · Inglese · Tedesco in apprendimento
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
+          <article class="service-card service-card--accent">
+            <div class="service-kicker">REVISIONE · CURA TECNICA</div>
+            <h3>Un sito più solido, veloce e semplice da usare.</h3>
+            <p>Interventi mirati su siti esistenti: dalla manutenzione delle dipendenze alla configurazione degli header, fino a piccoli miglioramenti di accessibilità e prestazioni.</p>
+            <ul>
+              <li>Controllo tecnico di base</li>
+              <li>Piccoli interventi di hardening</li>
+              <li>Correzioni responsive e di usabilità</li>
+            </ul>
+            <a href="mailto:matteo.carollo.webdev@gmail.com?subject=Richiesta%20revisione%20sito">Raccontami cosa migliorare <span aria-hidden="true">↗</span></a>
+          </article>
         </div>
 
       </div>
@@ -310,47 +265,51 @@
         <div class="section-head">
 
           <h2 class="section-title">
-            <span class="n">02</span>
             Progetti selezionati
           </h2>
 
           <div
             class="filters"
             id="filters"
+            role="group"
+            aria-label="Filtra i progetti per categoria"
           ></div>
 
         </div>
+
+        <p class="work-note">Esempi concreti del mio modo di progettare e sviluppare.</p>
 
 
         <div
           class="project-list"
           id="projectList"
+          aria-live="polite"
         ></div>
 
       </div>
 
     </section>
 
-<!-- CURRENTLY WORKING ON -->
+<!-- PROGETTO IN SVILUPPO -->
 <section id="current" class="current-section">
   <div class="container">
 
     <div class="current-intro">
-      <div class="current-number">03</div>
+          <div class="current-number">LAB / 01</div>
 
-      <div class="current-heading">
+        <div class="current-heading">
         <div class="current-eyebrow">
-          CURRENTLY WORKING ON
+          PROGETTO PERSONALE · IN SVILUPPO
         </div>
 
         <h2>
-          WHAT I'M<br>
-          <span>BUILDING NOW.</span>
+          AEGIS<br>
+          <span>HOME.</span>
         </h2>
 
         <p>
-          Projects in active development, experiments and technologies
-          I'm currently exploring.
+          Sviluppo un sistema che osserva il traffico di rete, individua
+          eventi sospetti e li rende più facili da interpretare.
         </p>
       </div>
     </div>
@@ -360,54 +319,55 @@
       <!-- AEGIS -->
       <article class="current-item">
 
-        <div class="current-index">
-          01
-        </div>
+        <div class="current-index">OPEN<br>SOURCE</div>
 
         <div class="current-main">
 
           <div class="current-meta">
             <span class="current-status">
               <span class="status-dot"></span>
-              ACTIVE
+              IN SVILUPPO
             </span>
 
-            <span>CYBERSECURITY · FULL-STACK</span>
+          <span>MONITORAGGIO RETE · SICUREZZA</span>
           </div>
 
           <h3>Aegis</h3>
 
           <p>
-            Security-oriented platform for home infrastructure,
-            developed to explore authentication, networking,
-            monitoring and service management.
+            Piattaforma open source per osservare il traffico della rete,
+            rilevare eventi sospetti e presentarli in una dashboard. Integra
+            raccolta dei flussi, regole di rilevamento, alert con contesto
+            MITRE ATT&amp;CK e una API per la visualizzazione.
           </p>
 
           <div class="current-stack">
             <span>Python</span>
             <span>FastAPI</span>
             <span>PostgreSQL</span>
-            <span>Docker</span>
+            <span>React</span>
+            <span>TypeScript</span>
           </div>
 
           <div class="current-side">
             <span class="last-update" data-repo="Aegis-home">
-              UPDATED — ...
+              AGGIORNATO — ...
             </span>
           
             <a
               href="https://github.com/Mcarollo-SYS/Aegis-home"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Open Aegis repository"
+              aria-label="Apri il repository GitHub di Aegis Home"
             >
               ↗
             </a>
           </div>
 
+        </div>
       </article>
 
-
+    </div>
   </div>
 </section>
 
@@ -417,7 +377,7 @@
     ============================================================= -->
 
     <section
-      id="skills"
+      id="method"
       class="section section--invert"
     >
 
@@ -426,138 +386,30 @@
         <div class="section-head">
 
           <h2 class="section-title">
-            <span class="n">03</span>
-            Competenze
+            Come lavoro
           </h2>
 
         </div>
 
 
-        <div class="skills-interface">
+        <p class="process-intro">Un percorso semplice e condiviso, dal primo confronto alla consegna.</p>
 
-          <div class="skills-display">
-
-            <div class="skills-display-top">
-
-              <span class="skills-label">
-                CURRENT FOCUS
-              </span>
-
-              <span
-                class="skills-counter"
-                id="skillsCounter"
-              >
-                01 / 04
-              </span>
-
-            </div>
-
-
-            <div class="skills-content">
-
-              <div
-                class="skills-category"
-                id="skillsCategory"
-              >
-                SOFTWARE
-              </div>
-
-              <p
-                class="skills-description"
-                id="skillsDescription"
-              >
-                Sviluppo software, applicazioni web e strumenti digitali.
-              </p>
-
-              <div
-                class="skills-tags"
-                id="skillsTags"
-              ></div>
-
-            </div>
-
-          </div>
-
-
-          <div class="skills-navigation">
-
-            <button
-              class="skill-nav-item is-active"
-              data-skill="software"
-              type="button"
-            >
-              <span class="skill-number">
-                01
-              </span>
-
-              <span class="skill-name">
-                Software
-              </span>
-
-              <span class="skill-arrow">
-                ↗
-              </span>
-            </button>
-
-
-            <button
-              class="skill-nav-item"
-              data-skill="systems"
-              type="button"
-            >
-              <span class="skill-number">
-                02
-              </span>
-
-              <span class="skill-name">
-                Systems
-              </span>
-
-              <span class="skill-arrow">
-                ↗
-              </span>
-            </button>
-
-
-            <button
-              class="skill-nav-item"
-              data-skill="security"
-              type="button"
-            >
-              <span class="skill-number">
-                03
-              </span>
-
-              <span class="skill-name">
-                Cybersecurity
-              </span>
-
-              <span class="skill-arrow">
-                ↗
-              </span>
-            </button>
-
-
-            <button
-              class="skill-nav-item"
-              data-skill="automation"
-              type="button"
-            >
-              <span class="skill-number">
-                04
-              </span>
-
-              <span class="skill-name">
-                Automation
-              </span>
-
-              <span class="skill-arrow">
-                ↗
-              </span>
-            </button>
-
-          </div>
-
+        <div class="process-grid">
+          <article class="process-step">
+            <div class="process-label">01 / ASCOLTO</div>
+            <h3>Partiamo dal problema.</h3>
+            <p>Mi racconti cosa vuoi ottenere, a chi ti rivolgi e cosa oggi non funziona.</p>
+          </article>
+          <article class="process-step">
+            <div class="process-label">02 / PROGETTO</div>
+            <h3>Mettiamo a fuoco la soluzione.</h3>
+            <p>Definiamo insieme contenuti, pagine, priorità e direzione visiva prima di sviluppare.</p>
+          </article>
+          <article class="process-step">
+            <div class="process-label">03 / SVILUPPO</div>
+            <h3>Costruiamo e rifiniamo.</h3>
+            <p>Realizzo il progetto, raccogliamo i tuoi feedback e concordiamo la consegna.</p>
+          </article>
         </div>
 
       </div>
@@ -570,7 +422,7 @@
     ============================================================= -->
 
     <section
-      id="experience"
+      id="about"
       class="section"
     >
 
@@ -579,12 +431,13 @@
         <div class="section-head">
 
           <h2 class="section-title">
-            <span class="n">04</span>
-            Percorso
+            Chi sono
           </h2>
 
         </div>
 
+
+        <p class="about-lead">Sono Matteo, studente di Ingegneria dell'Automazione e dei Sistemi con una formazione tecnica in Informatica. Lavoro su progetti digitali con curiosità per il codice, i sistemi e i dettagli che rendono un prodotto chiaro da usare.</p>
 
         <div
           class="timeline"
@@ -610,9 +463,9 @@
     <div class="container">
 
       <div class="footer-statement">
-        Parliamo del
+        Hai un'idea?
         <span class="accent">
-          prossimo progetto.
+          Parliamone.
         </span>
       </div>
 
@@ -622,10 +475,11 @@
         <div class="footer-links">
 
           <a
-          href="mailto:m.matteo300@gmail.com?subject=Contatto%20dal%20sito&body=Ciao%20Matteo%2C%0A"
+            href="mailto:matteo.carollo.webdev@gmail.com?subject=Parliamo%20del%20mio%20progetto&body=Ciao%20Matteo%2C%0A"
+            data-email-fallback
         >
-          Email
-        </a>
+            Scrivimi
+          </a>
 
           <a
             href="https://github.com/Mcarollo-SYS"
@@ -645,12 +499,14 @@
 
         </div>
 
-        <a
-        class="cv-button"
+        <p class="email-fallback-status" data-email-fallback-status aria-live="polite"></p>
 
-      >
-        Scarica CV — PDF
-      </a>
+        <a
+          class="cv-button"
+          href="mailto:matteo.carollo.webdev@gmail.com?subject=Parliamo%20del%20mio%20progetto"
+        >
+          Raccontami il progetto ↗
+        </a>
 
       </div>
 

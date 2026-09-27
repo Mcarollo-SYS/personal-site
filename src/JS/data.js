@@ -5,20 +5,21 @@
  */
 
 export const META = [
-  { label: "Formazione", value: "Automazione & Sistemi" },
-  { label: "Background", value: "Informatica" },
-  { label: "Focus", value: "Software · Systems · Security" },
-  { label: "Università", value: "UniPD" }
+  { label: "Siti web", value: "Vetrina · Landing · Portfolio" },
+  { label: "Applicazioni", value: "Web · Mobile · Prototipi" },
+  { label: "Integrazioni", value: "API · Servizi · Dati" },
+  { label: "Supporto", value: "Revisione · Cura tecnica" }
 ];
 
 export const PROJECTS = [
   {
-    id: "3d-web-application",
-    title: "3D Web Application",
-    category: "Frontend / 3D",
+    id: "progetto-gpo",
+    title: "GPO — Ambiente 3D interattivo",
+    category: "Web · 3D",
     year: "2025",
     description:
-      "Applicazione web interattiva sviluppata in gruppo con un ambiente 3D esplorabile. Il progetto integra una scena WebGL, interazioni con l'ambiente e una componente di fisica. Ho partecipato anche al coordinamento del gruppo e alla gestione del lavoro tramite Git.",
+      "Prototipo web sviluppato in team con Three.js e Cannon.js. La scena 3D include un veicolo guidabile e una simulazione fisica con gravità, attrito e collisioni, oltre a telecamera e illuminazione dinamiche. Ho contribuito allo sviluppo e al coordinamento del lavoro del gruppo.",
+    repository: "https://github.com/Mcarollo-SYS/Progetto-GPO",
     stack: [
       "JavaScript",
       "Three.js",
@@ -32,123 +33,60 @@ export const PROJECTS = [
   },
 
   {
-    id: "progetto-flutter",
-    title: "Progetto Flutter",
-    category: "Mobile",
+    id: "notespese",
+    title: "NoteSpese — Gestione delle spese",
+    category: "Mobile · full stack",
     year: "2025",
     description:
-      "Applicazione mobile sviluppata con Flutter e Dart durante il percorso di formazione informatica. Il progetto comprende la realizzazione dell'interfaccia, la logica applicativa e l'integrazione con servizi web.",
+      "Applicazione mobile per registrare entrate e uscite, consultare un riepilogo mensile e filtrare le transazioni. Il progetto collega un client Flutter a un'API REST in PHP e a un database MySQL, con autenticazione, operazioni CRUD e grafici per visualizzare i dati.",
+    repository: "https://github.com/Mcarollo-SYS/PROGETTO-FLUTTER",
     stack: [
       "Flutter",
       "Dart",
-      "XML",
-      "Web Services",
-      "Git"
+      "PHP",
+      "REST API",
+      "MySQL",
+      "Provider",
+      "fl_chart"
     ]
   },
 
   {
     id: "tps-web-service",
-    title: "TPS Web Service",
-    category: "Web Service",
+    title: "TPS Web Service — Gestione concessionario",
+    category: "Web service · Java",
     year: "2025",
     description:
-      "Progetto dedicato alla realizzazione e all'utilizzo di servizi web, con particolare attenzione alla comunicazione tra applicazioni, alla gestione dei dati e all'integrazione tra componenti software.",
+      "Web service per gestire auto, marche e clienti, con un'API PHP che scambia dati XML e un database MySQL. Un client desktop Java Swing consente di consultare i dati e svolgere operazioni di creazione, aggiornamento ed eliminazione tramite richieste HTTP.",
+    repository: "https://github.com/Mcarollo-SYS/TPS-WEB_SERVICE",
     stack: [
       "Java",
-      "Web Services",
+      "PHP",
+      "MySQL",
       "XML",
-      "HTTP",
-      "Git"
+      "JAXB",
+      "HTTP"
     ]
   },
 
   {
     id: "escape-room",
-    title: "Escape Room",
-    category: "Software",
+    title: "Escape Room — Gioco 2D in Java",
+    category: "Java · videogiochi",
     year: "2025",
     description:
-      "Progetto software sviluppato in gruppo per applicare programmazione, progettazione e organizzazione del lavoro. Ho partecipato allo sviluppo e al coordinamento delle attività del gruppo.",
+      "Gioco puzzle 2D con visuale dall'alto, realizzato in Java. Il codice separa modello, interfaccia e controlli con l'architettura MVC; include una mappa a tile, rilevamento delle collisioni e un esercizio di concorrenza Producer–Consumer con buffer condiviso.",
+    repository: "https://github.com/Mcarollo-SYS/Escape-room-4-year",
     stack: [
       "Java",
-      "OOP",
-      "Git",
-      "Project Management"
+      "Java Swing",
+      "MVC",
+      "Multithreading",
+      "Tile engine"
     ]
   },
 
 ];
-
-/**
- * Competenze principali
- */
-export const SKILLS = {
-  software: {
-    number: "01 / 04",
-    title: "SOFTWARE",
-    description:
-      "Sviluppo software, applicazioni web e strumenti digitali, con particolare attenzione alla struttura del codice e alla progettazione.",
-    tags: [
-      "Java",
-      "JavaScript",
-      "HTML",
-      "CSS",
-      "Flutter",
-      "Dart",
-      "Three.js",
-      "Git"
-    ]
-  },
-
-  systems: {
-    number: "02 / 04",
-    title: "SYSTEMS",
-    description:
-      "Fondamenti di sistemi operativi, networking e amministrazione di ambienti informatici.",
-    tags: [
-      "Linux",
-      "Bash",
-      "TCP/IP",
-      "DNS",
-      "Firewall",
-      "Windows",
-      "Active Directory",
-      "Git"
-    ]
-  },
-
-  security: {
-    number: "03 / 04",
-    title: "CYBERSECURITY",
-    description:
-      "Percorso di approfondimento orientato alla sicurezza di sistemi e reti, SOC, analisi degli incidenti e gestione delle vulnerabilità.",
-    tags: [
-      "SOC",
-      "MITRE ATT&CK",
-      "Phishing Analysis",
-      "Incident Response",
-      "Vulnerability Management",
-      "Network Security",
-      "Cloud Security",
-      "GRC"
-    ]
-  },
-
-  automation: {
-    number: "04 / 04",
-    title: "AUTOMATION",
-    description:
-      "Formazione universitaria nell'ambito dell'automazione, dei sistemi e del controllo.",
-    tags: [
-      "Control Systems",
-      "Automation",
-      "Systems",
-      "Programming",
-      "Engineering"
-    ]
-  }
-};
 
 /**
  * Percorso formativo
