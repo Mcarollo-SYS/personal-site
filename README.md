@@ -100,6 +100,10 @@ Per controllare le dipendenze:
 npm audit
 ```
 
+## Licenza e diritti
+
+© Matteo Carollo. Tutti i diritti riservati. Il codice e i contenuti sono pubblicati a scopo dimostrativo; non è concessa una licenza per riutilizzarli.
+
 ---
 
 <div align="center">
